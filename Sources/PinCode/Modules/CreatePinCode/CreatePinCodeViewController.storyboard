@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create Pin Code View Controller-->
+        <scene sceneID="Clo-Ba-4QO">
+            <objects>
+                <viewController storyboardIdentifier="CreatePinCodeViewController" id="6zp-D7-3vL" customClass="CreatePinCodeViewController" customModule="DiiaAuthorizationPinCode" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DFk-tt-hH8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_background" translatesAutoresizingMaskIntoConstraints="NO" id="8wz-vz-b8E">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOV-0Y-S7Y">
+                                <rect key="frame" x="14" y="64" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3sa-9f-eIa"/>
+                                    <constraint firstAttribute="width" constant="44" id="hQ7-kO-KTx"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="menu_back"/>
+                                <connections>
+                                    <action selector="backButtonTapped" destination="6zp-D7-3vL" eventType="touchUpInside" id="DMe-yp-Khq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Придумайте код з 4 цифр" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="thK-lk-EOz">
+                                <rect key="frame" x="24" y="114" width="366" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNa-Ey-0ZE">
+                                <rect key="frame" x="24" y="165.5" width="366" height="18"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Цей код ви будете вводити для входу у застосунок Дія.">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="cellTitle"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ht0-xB-FSN">
+                                <rect key="frame" x="0.0" y="191.5" width="414" height="696.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmo-ve-bpz" customClass="PincodeView" customModule="DiiaAuthorizationPinCode">
+                                        <rect key="frame" x="0.0" y="113.5" width="414" height="470"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="470" id="9FU-YN-d6x"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="dmo-ve-bpz" firstAttribute="leading" secondItem="ht0-xB-FSN" secondAttribute="leading" id="IPm-TH-wYh"/>
+                                    <constraint firstAttribute="trailing" secondItem="dmo-ve-bpz" secondAttribute="trailing" id="Mts-sC-1tY"/>
+                                    <constraint firstItem="dmo-ve-bpz" firstAttribute="centerY" secondItem="ht0-xB-FSN" secondAttribute="centerY" id="vK3-3Q-h72"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fsj-Ee-LuY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ht0-xB-FSN" secondAttribute="bottom" constant="8" id="6CP-Zl-6d0"/>
+                            <constraint firstItem="8wz-vz-b8E" firstAttribute="trailing" secondItem="fsj-Ee-LuY" secondAttribute="trailing" id="9sv-dn-Ovy"/>
+                            <constraint firstItem="thK-lk-EOz" firstAttribute="leading" secondItem="fsj-Ee-LuY" secondAttribute="leading" constant="24" id="AFn-Eq-qYU"/>
+                            <constraint firstItem="8wz-vz-b8E" firstAttribute="top" secondItem="DFk-tt-hH8" secondAttribute="top" id="Cam-gV-5fa"/>
+                            <constraint firstAttribute="bottom" secondItem="8wz-vz-b8E" secondAttribute="bottom" id="El3-PL-llY"/>
+                            <constraint firstAttribute="trailing" secondItem="ht0-xB-FSN" secondAttribute="trailing" id="O5K-Ox-SxN"/>
+                            <constraint firstItem="NNa-Ey-0ZE" firstAttribute="top" secondItem="thK-lk-EOz" secondAttribute="bottom" constant="24" id="P17-8s-Mh3"/>
+                            <constraint firstItem="thK-lk-EOz" firstAttribute="top" secondItem="fsj-Ee-LuY" secondAttribute="top" priority="750" constant="32" id="Qth-y1-ETB"/>
+                            <constraint firstItem="ht0-xB-FSN" firstAttribute="top" secondItem="NNa-Ey-0ZE" secondAttribute="bottom" constant="8" id="V9C-Z9-sMg"/>
+                            <constraint firstItem="thK-lk-EOz" firstAttribute="top" secondItem="bOV-0Y-S7Y" secondAttribute="bottom" constant="6" id="VC4-Fs-j92"/>
+                            <constraint firstItem="bOV-0Y-S7Y" firstAttribute="top" secondItem="fsj-Ee-LuY" secondAttribute="top" constant="16" id="ZDz-6l-mbU"/>
+                            <constraint firstItem="ht0-xB-FSN" firstAttribute="leading" secondItem="DFk-tt-hH8" secondAttribute="leading" id="a0e-We-wPW"/>
+                            <constraint firstItem="fsj-Ee-LuY" firstAttribute="trailing" secondItem="thK-lk-EOz" secondAttribute="trailing" constant="24" id="aGm-js-UkZ"/>
+                            <constraint firstItem="bOV-0Y-S7Y" firstAttribute="leading" secondItem="fsj-Ee-LuY" secondAttribute="leading" constant="14" id="emf-Ht-A5v"/>
+                            <constraint firstItem="fsj-Ee-LuY" firstAttribute="trailing" secondItem="NNa-Ey-0ZE" secondAttribute="trailing" constant="24" id="lQt-Cu-Ovi"/>
+                            <constraint firstItem="NNa-Ey-0ZE" firstAttribute="leading" secondItem="fsj-Ee-LuY" secondAttribute="leading" constant="24" id="p7V-dm-TgG"/>
+                            <constraint firstItem="8wz-vz-b8E" firstAttribute="leading" secondItem="fsj-Ee-LuY" secondAttribute="leading" id="rUk-9z-oJ7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="bOV-0Y-S7Y" id="2eh-rZ-OWe"/>
+                        <outlet property="headerLabel" destination="thK-lk-EOz" id="vT7-9e-Bku"/>
+                        <outlet property="infoLabel" destination="NNa-Ey-0ZE" id="ya7-ex-6fW"/>
+                        <outlet property="pincodeHeightConstraint" destination="9FU-YN-d6x" id="8DN-Vt-Eo3"/>
+                        <outlet property="pincodeView" destination="dmo-ve-bpz" id="66z-WW-qKA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQk-22-opl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="light_background" width="750" height="1574"/>
+        <image name="menu_back" width="20.5" height="18"/>
+    </resources>
+</document>

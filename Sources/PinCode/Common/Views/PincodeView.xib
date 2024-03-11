@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PincodeView" customModule="DiiaAuthorizationPinCode">
+            <connections>
+                <outlet property="biometryButton" destination="eCQ-kR-wUN" id="hGo-mR-Ar4"/>
+                <outlet property="buttonsBottompConstraint" destination="N3S-ev-vk7" id="UOW-g6-84Q"/>
+                <outlet property="buttonsTopConstraint" destination="DVP-Zz-833" id="HwB-6D-zRB"/>
+                <outlet property="buttonsVerticalStack" destination="RcT-Ka-OPr" id="T1J-Vu-o4T"/>
+                <outlet property="clearButton" destination="gha-lB-Rsw" id="gHs-nx-SUO"/>
+                <outlet property="digitButtonHeightConstraint" destination="8KN-tQ-Xlo" id="nmK-Fq-xOL"/>
+                <outlet property="indicatorsStack" destination="pPa-tI-cdm" id="LKf-M0-5op"/>
+                <outlet property="indicatorsTopConstraint" destination="szc-9X-MMy" id="CIt-rc-6Ai"/>
+                <outletCollection property="buttonsHorizontalStacks" destination="SlW-h4-uUf" collectionClass="NSMutableArray" id="JMC-Hh-Oi1"/>
+                <outletCollection property="buttonsHorizontalStacks" destination="dbF-fs-e0w" collectionClass="NSMutableArray" id="cRi-um-TKc"/>
+                <outletCollection property="buttonsHorizontalStacks" destination="6Fd-fI-ku5" collectionClass="NSMutableArray" id="3yh-i1-7va"/>
+                <outletCollection property="buttonsHorizontalStacks" destination="gvC-sm-9hI" collectionClass="NSMutableArray" id="B04-3L-Qmu"/>
+                <outletCollection property="digitButtons" destination="8n1-lG-YkW" collectionClass="NSMutableArray" id="CMk-A7-Xjy"/>
+                <outletCollection property="digitButtons" destination="2bQ-b2-GNd" collectionClass="NSMutableArray" id="oGn-e4-7SY"/>
+                <outletCollection property="digitButtons" destination="BeU-KU-kFi" collectionClass="NSMutableArray" id="fpD-4R-kcn"/>
+                <outletCollection property="digitButtons" destination="sQB-kA-6hu" collectionClass="NSMutableArray" id="chC-fX-jQV"/>
+                <outletCollection property="digitButtons" destination="2cz-LC-WbE" collectionClass="NSMutableArray" id="wu4-Hi-wwD"/>
+                <outletCollection property="digitButtons" destination="bEi-aS-4kH" collectionClass="NSMutableArray" id="Ppt-yY-UH0"/>
+                <outletCollection property="digitButtons" destination="ab2-1D-YEL" collectionClass="NSMutableArray" id="NND-MU-ecQ"/>
+                <outletCollection property="digitButtons" destination="MqI-uj-G3x" collectionClass="NSMutableArray" id="4Mw-5Z-nLb"/>
+                <outletCollection property="digitButtons" destination="uML-S0-gUm" collectionClass="NSMutableArray" id="p8B-Nc-Fd1"/>
+                <outletCollection property="digitButtons" destination="akp-Jv-zwQ" collectionClass="NSMutableArray" id="RPj-rx-uZd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="center" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="12" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pPa-tI-cdm" userLabel="Indicators Stack">
+                    <rect key="frame" x="100" y="22" width="214" height="12"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="RcT-Ka-OPr" userLabel="Horizontal Buttons Stack">
+                    <rect key="frame" x="52.5" y="70" width="309" height="380"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="SlW-h4-uUf">
+                            <rect key="frame" x="0.0" y="0.0" width="309" height="83"/>
+                            <subviews>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8n1-lG-YkW" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                    <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="8n1-lG-YkW" secondAttribute="height" multiplier="1:1" id="1Xo-04-0bY"/>
+                                        <constraint firstAttribute="height" constant="83" id="8KN-tQ-Xlo"/>
+                                    </constraints>
+                                    <state key="normal" title="1">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bQ-b2-GNd" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                    <rect key="frame" x="113" y="0.0" width="83" height="83"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="2bQ-b2-GNd" secondAttribute="height" multiplier="1:1" id="vE1-UC-2PF"/>
+                                    </constraints>
+                                    <state key="normal" title="2">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeU-KU-kFi" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                    <rect key="frame" x="226" y="0.0" width="83" height="83"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="BeU-KU-kFi" secondAttribute="height" multiplier="1:1" id="OGT-GB-jSW"/>
+                                    </constraints>
+                                    <state key="normal" title="3">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dbF-fs-e0w">
+                            <rect key="frame" x="0.0" y="99" width="309" height="83"/>
+                            <subviews>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQB-kA-6hu" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                    <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="sQB-kA-6hu" secondAttribute="height" multiplier="1:1" id="Gd2-fp-DMT"/>
+                                    </constraints>
+                                    <state key="normal" title="4">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cz-LC-WbE" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                    <rect key="frame" x="113" y="0.0" width="83" height="83"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="2cz-LC-WbE" secondAttribute="height" multiplier="1:1" id="jyg-uh-O2V"/>
+                                    </constraints>
+                                    <state key="normal" title="5">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEi-aS-4kH" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                    <rect key="frame" x="226" y="0.0" width="83" height="83"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="bEi-aS-4kH" secondAttribute="height" multiplier="1:1" id="1We-5t-X36"/>
+                                    </constraints>
+                                    <state key="normal" title="6">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6Fd-fI-ku5">
+                            <rect key="frame" x="0.0" y="198" width="309" height="83"/>
+                            <subviews>
+                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab2-1D-YEL" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                    <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="ab2-1D-YEL" secondAttribute="height" multiplier="1:1" id="Wbv-HK-sZv"/>
+                                    </constraints>
+                                    <state key="normal" title="7">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqI-uj-G3x" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                    <rect key="frame" x="113" y="0.0" width="83" height="83"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="MqI-uj-G3x" secondAttribute="height" multiplier="1:1" id="PMV-rX-05l"/>
+                                    </constraints>
+                                    <state key="normal" title="8">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uML-S0-gUm" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                    <rect key="frame" x="226" y="0.0" width="83" height="83"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="uML-S0-gUm" secondAttribute="height" multiplier="1:1" id="Siv-gD-dFY"/>
+                                    </constraints>
+                                    <state key="normal" title="9">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gvC-sm-9hI">
+                            <rect key="frame" x="0.0" y="297" width="309" height="83"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCQ-kR-wUN">
+                                    <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="eCQ-kR-wUN" secondAttribute="height" multiplier="1:1" id="EH7-Uc-PaH"/>
+                                    </constraints>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                    <connections>
+                                        <action selector="additionalButtonPressed:" destination="-1" eventType="touchUpInside" id="Nl0-au-1VX"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akp-Jv-zwQ" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                    <rect key="frame" x="113" y="0.0" width="83" height="83"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="akp-Jv-zwQ" secondAttribute="height" multiplier="1:1" id="kBX-q6-e3V"/>
+                                    </constraints>
+                                    <state key="normal" title="0">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gha-lB-Rsw">
+                                    <rect key="frame" x="226" y="0.0" width="83" height="83"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="gha-lB-Rsw" secondAttribute="height" multiplier="1:1" id="6u3-LM-kkI"/>
+                                    </constraints>
+                                    <state key="normal" image="clear"/>
+                                    <connections>
+                                        <action selector="clearPressed:" destination="-1" eventType="touchUpInside" id="pIW-fN-VvP"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="RcT-Ka-OPr" firstAttribute="top" secondItem="pPa-tI-cdm" secondAttribute="bottom" constant="36" id="DVP-Zz-833"/>
+                <constraint firstItem="pPa-tI-cdm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="499" constant="100" id="Krf-OO-e7g"/>
+                <constraint firstAttribute="bottom" secondItem="RcT-Ka-OPr" secondAttribute="bottom" constant="30" id="N3S-ev-vk7"/>
+                <constraint firstAttribute="trailing" secondItem="pPa-tI-cdm" secondAttribute="trailing" priority="499" constant="100" id="jTo-U9-Z1d"/>
+                <constraint firstItem="RcT-Ka-OPr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="s2R-3N-jRu"/>
+                <constraint firstItem="pPa-tI-cdm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="22" id="szc-9X-MMy"/>
+                <constraint firstItem="pPa-tI-cdm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wJU-gb-TDI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="69.565217391304358" y="136.60714285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="clear" width="22" height="22"/>
+    </resources>
+</document>

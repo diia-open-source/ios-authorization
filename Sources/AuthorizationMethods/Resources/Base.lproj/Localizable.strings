@@ -1,0 +1,21 @@
+// MARK: - General
+"general_step" = "Крок %@ з %@";
+"general_ok" = "Добре";
+
+// MARK: - Accessibility
+"general_accessibility_back_button_label" = "Назад";
+"general_accessibility_back_button_step" = "Натисніть двічі, щоб повернутися на попередній крок.";
+
+"auth_accessibility_bank_selection_bank_hint" = "Натисніть двічі, щоб авторизуватися через банк %@";
+"auth_accessibility_banks_search" = "Пошук банку для авторизації";
+"auth_accessibility_methods_bank" = "Вхід через %@";
+
+// MARK: - Authorization
+"authorization_bank_id_list_error_title" = "На жаль,\nсталася помилка";
+"authorization_bank_id_list_error_details" = "Перелік банків недоступний. Спробуйте трошки пізніше.";
+"authorization_all_banks_info" = "Для авторизації за допомогою BankID, оберіть свій банк та увійдіть до системи інтернет-банкінгу. Авторизація не передбачає жодного доступу до фінансової інформації.";
+"authorization_all_banks_title" = "Оберіть свій банк";
+
+"authorization_bank_id_insecure_title" = "Небезпечний контент";
+"authorization_bank_id_insecure_description" = "Запитувана сторінка містить небезпечний контент і буде закрита";
+"authorization_search" = "Пошук";

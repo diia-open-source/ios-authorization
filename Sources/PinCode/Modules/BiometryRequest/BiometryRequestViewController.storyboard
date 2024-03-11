@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Biometry Request View Controller-->
+        <scene sceneID="2do-kK-MUD">
+            <objects>
+                <viewController storyboardIdentifier="BiometryRequestViewController" id="QOd-dS-Wtl" customClass="BiometryRequestViewController" customModule="DiiaAuthorizationPinCode" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CRF-FI-VXf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_background" translatesAutoresizingMaskIntoConstraints="NO" id="PVh-5w-gzi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFZ-5k-p2F">
+                                <rect key="frame" x="20" y="78" width="374" height="27.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Дозвольте вхід за Touch ID">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="23"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGk-95-mRi">
+                                <rect key="frame" x="20" y="116.5" width="374" height="36"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Дозвольте Touch ID, щоб входити до застосунку за відбитком пальця.">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="cellTitle"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhz-Fc-HYw">
+                                <rect key="frame" x="0.0" y="168.5" width="414" height="553.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fingerprint" translatesAutoresizingMaskIntoConstraints="NO" id="oeF-xd-kfD">
+                                        <rect key="frame" x="167" y="237" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="LqU-7m-XWL"/>
+                                            <constraint firstAttribute="height" constant="80" id="zIS-3P-eUm"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="oeF-xd-kfD" firstAttribute="centerY" secondItem="Mhz-Fc-HYw" secondAttribute="centerY" id="kCY-WU-hed"/>
+                                    <constraint firstItem="oeF-xd-kfD" firstAttribute="centerX" secondItem="Mhz-Fc-HYw" secondAttribute="centerX" id="m3q-oe-vOZ"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="EZw-Uh-cjG">
+                                <rect key="frame" x="0.0" y="738" width="414" height="92"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQw-5O-QRz" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                        <rect key="frame" x="138" y="0.0" width="138" height="48"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="sya-Sh-7jG"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
+                                        <state key="normal" title="Дозволити">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="approveBtnPressed:" destination="QOd-dS-Wtl" eventType="touchUpInside" id="Hzc-Fn-liI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rQ-Lo-Vgs">
+                                        <rect key="frame" x="157" y="60" width="100" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="qER-IU-ED1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                        <state key="normal" title="Дозволю пізніше">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="laterBtnPressed:" destination="QOd-dS-Wtl" eventType="touchUpInside" id="zGl-pr-abS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mL5-Xn-1CO"/>
+                        <color key="backgroundColor" red="0.87058823529411766" green="0.7803921568627451" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dGk-95-mRi" firstAttribute="top" secondItem="oFZ-5k-p2F" secondAttribute="bottom" constant="11" id="4tu-wn-arv"/>
+                            <constraint firstItem="oFZ-5k-p2F" firstAttribute="top" secondItem="mL5-Xn-1CO" secondAttribute="top" constant="30" id="6FQ-RZ-b1R"/>
+                            <constraint firstItem="mL5-Xn-1CO" firstAttribute="bottom" secondItem="EZw-Uh-cjG" secondAttribute="bottom" constant="32" id="8hU-6Q-mDG"/>
+                            <constraint firstAttribute="trailing" secondItem="EZw-Uh-cjG" secondAttribute="trailing" id="9lc-2t-8kB"/>
+                            <constraint firstItem="PVh-5w-gzi" firstAttribute="top" secondItem="CRF-FI-VXf" secondAttribute="top" id="Szr-RZ-r34"/>
+                            <constraint firstItem="mL5-Xn-1CO" firstAttribute="trailing" secondItem="oFZ-5k-p2F" secondAttribute="trailing" constant="20" id="Tco-KH-YUx"/>
+                            <constraint firstItem="Mhz-Fc-HYw" firstAttribute="trailing" secondItem="mL5-Xn-1CO" secondAttribute="trailing" id="aBW-Zc-qWT"/>
+                            <constraint firstItem="oFZ-5k-p2F" firstAttribute="leading" secondItem="CRF-FI-VXf" secondAttribute="leading" constant="20" id="dvj-YC-g2s"/>
+                            <constraint firstItem="Mhz-Fc-HYw" firstAttribute="leading" secondItem="mL5-Xn-1CO" secondAttribute="leading" id="g4e-3w-VEh"/>
+                            <constraint firstAttribute="bottom" secondItem="PVh-5w-gzi" secondAttribute="bottom" id="gbG-Jz-jKr"/>
+                            <constraint firstItem="PVh-5w-gzi" firstAttribute="trailing" secondItem="mL5-Xn-1CO" secondAttribute="trailing" id="m2m-ZH-fpi"/>
+                            <constraint firstItem="dGk-95-mRi" firstAttribute="leading" secondItem="CRF-FI-VXf" secondAttribute="leading" constant="20" id="oPy-cC-Ymg"/>
+                            <constraint firstItem="Mhz-Fc-HYw" firstAttribute="top" secondItem="dGk-95-mRi" secondAttribute="bottom" constant="16" id="qNE-CV-LtN"/>
+                            <constraint firstItem="PVh-5w-gzi" firstAttribute="leading" secondItem="mL5-Xn-1CO" secondAttribute="leading" id="t3R-x4-Fdm"/>
+                            <constraint firstItem="EZw-Uh-cjG" firstAttribute="leading" secondItem="CRF-FI-VXf" secondAttribute="leading" id="uqF-pL-wXg"/>
+                            <constraint firstItem="EZw-Uh-cjG" firstAttribute="top" secondItem="Mhz-Fc-HYw" secondAttribute="bottom" constant="16" id="xmt-Kd-odt"/>
+                            <constraint firstItem="mL5-Xn-1CO" firstAttribute="trailing" secondItem="dGk-95-mRi" secondAttribute="trailing" constant="20" id="yEW-Xj-luP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="approveButton" destination="sQw-5O-QRz" id="8Hx-Ws-B87"/>
+                        <outlet property="descriptionLabel" destination="dGk-95-mRi" id="Hnh-XF-nCl"/>
+                        <outlet property="imageView" destination="oeF-xd-kfD" id="iq7-Zh-tZA"/>
+                        <outlet property="laterButton" destination="8rQ-Lo-Vgs" id="cp3-YN-amZ"/>
+                        <outlet property="titleLabel" destination="oFZ-5k-p2F" id="6db-rk-uG2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQP-b5-EaH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102.89855072463769" y="154.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fingerprint" width="94" height="94"/>
+        <image name="light_background" width="750" height="1574"/>
+    </resources>
+</document>

@@ -1,0 +1,56 @@
+{
+  "configurations" : [
+    {
+      "id" : "EF373B5B-1033-40EB-9317-F5A34CF8438C",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:",
+          "identifier" : "DiiaAuthorization",
+          "name" : "DiiaAuthorization"
+        },
+        {
+          "containerPath" : "container:",
+          "identifier" : "DiiaAuthorizationMethods",
+          "name" : "DiiaAuthorizationMethods"
+        },
+        {
+          "containerPath" : "container:",
+          "identifier" : "DiiaAuthorizationPinCode",
+          "name" : "DiiaAuthorizationPinCode"
+        }
+      ]
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "AuthorizationTests",
+        "name" : "AuthorizationTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "AuthorizationMethodsTests",
+        "name" : "AuthorizationMethodsTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "PinCodeTests",
+        "name" : "PinCodeTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bank Id Auth View Controller-->
+        <scene sceneID="bh3-CR-0iW">
+            <objects>
+                <viewController storyboardIdentifier="BankIdAuthViewController" id="8Ce-cq-gGg" customClass="BankIdAuthViewController" customModule="DiiaAuthorizationMethods" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gfJ-G6-xtb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdu-dD-fRO">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkD-ef-2AE">
+                                <rect key="frame" x="14" y="52" width="34" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="2jq-aL-cnR"/>
+                                    <constraint firstAttribute="height" constant="44" id="LRl-vP-jqj"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="0.0" maxY="5"/>
+                                <state key="normal" image="menu_back"/>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="8Ce-cq-gGg" eventType="touchUpInside" id="gSY-Sn-RJL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nQX-2j-Org"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pdu-dD-fRO" firstAttribute="top" secondItem="fkD-ef-2AE" secondAttribute="bottom" constant="8" id="4Yx-cG-YgM"/>
+                            <constraint firstItem="fkD-ef-2AE" firstAttribute="top" secondItem="nQX-2j-Org" secondAttribute="top" constant="4" id="4nw-nu-1vV"/>
+                            <constraint firstItem="nQX-2j-Org" firstAttribute="bottom" secondItem="pdu-dD-fRO" secondAttribute="bottom" id="E88-bT-XSk"/>
+                            <constraint firstItem="nQX-2j-Org" firstAttribute="trailing" secondItem="pdu-dD-fRO" secondAttribute="trailing" id="a9N-cu-oDW"/>
+                            <constraint firstItem="fkD-ef-2AE" firstAttribute="leading" secondItem="nQX-2j-Org" secondAttribute="leading" constant="14" id="esi-gt-tkv"/>
+                            <constraint firstItem="pdu-dD-fRO" firstAttribute="leading" secondItem="nQX-2j-Org" secondAttribute="leading" id="yqI-0w-04y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="fkD-ef-2AE" id="r4X-Lr-Enx"/>
+                        <outlet property="webContainer" destination="pdu-dD-fRO" id="djT-K7-bIk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ss6-V9-wpY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menu_back" width="20.5" height="18"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

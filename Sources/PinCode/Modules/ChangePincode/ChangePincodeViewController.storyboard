@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Change Pincode View Controller-->
+        <scene sceneID="Zmw-4O-H1g">
+            <objects>
+                <viewController storyboardIdentifier="ChangePincodeViewController" id="OlB-93-4yV" customClass="ChangePincodeViewController" customModule="DiiaAuthorizationPinCode" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tti-Wi-3RK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_background" translatesAutoresizingMaskIntoConstraints="NO" id="i05-jr-TkG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Повторіть код з 4 цифр" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P7J-nV-zGz">
+                                <rect key="frame" x="24" y="108" width="366" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uba-1g-Ks0">
+                                <rect key="frame" x="24" y="145.5" width="366" height="18"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Впевніться, що не помилилися і пам'ятаєте код для входу.">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="cellTitle"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMB-TO-CBN">
+                                <rect key="frame" x="0.0" y="171.5" width="414" height="690.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmI-tu-vV9" customClass="PincodeView" customModule="DiiaAuthorizationPinCode">
+                                        <rect key="frame" x="0.0" y="105.5" width="414" height="480"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="480" id="OPB-Eq-e4F"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="gmI-tu-vV9" firstAttribute="centerY" secondItem="zMB-TO-CBN" secondAttribute="centerY" id="ESg-wk-Nww"/>
+                                    <constraint firstAttribute="trailing" secondItem="gmI-tu-vV9" secondAttribute="trailing" id="bO3-Zz-qUk"/>
+                                    <constraint firstItem="gmI-tu-vV9" firstAttribute="leading" secondItem="zMB-TO-CBN" secondAttribute="leading" id="eBB-Qm-IIX"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q22-yK-IYL">
+                                <rect key="frame" x="20" y="58" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="fEo-DS-Iqj"/>
+                                    <constraint firstAttribute="height" constant="40" id="kaB-1q-aQB"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="menu_back"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="OlB-93-4yV" eventType="touchUpInside" id="m4l-ex-o1Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jt6-Ue-oQh"/>
+                        <color key="backgroundColor" red="0.77254901960784317" green="0.85098039215686272" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="P7J-nV-zGz" firstAttribute="top" secondItem="Q22-yK-IYL" secondAttribute="bottom" constant="10" id="29S-pv-JDW"/>
+                            <constraint firstItem="i05-jr-TkG" firstAttribute="top" secondItem="tti-Wi-3RK" secondAttribute="top" id="6Sf-Ao-Ksu"/>
+                            <constraint firstItem="i05-jr-TkG" firstAttribute="leading" secondItem="tti-Wi-3RK" secondAttribute="leading" id="6XT-CN-4s1"/>
+                            <constraint firstItem="Jt6-Ue-oQh" firstAttribute="leading" secondItem="zMB-TO-CBN" secondAttribute="leading" id="6jv-r7-l61"/>
+                            <constraint firstAttribute="bottom" secondItem="i05-jr-TkG" secondAttribute="bottom" id="DrS-Nu-An4"/>
+                            <constraint firstItem="P7J-nV-zGz" firstAttribute="leading" secondItem="Jt6-Ue-oQh" secondAttribute="leading" constant="24" id="JZt-2u-N4W"/>
+                            <constraint firstItem="Uba-1g-Ks0" firstAttribute="leading" secondItem="Jt6-Ue-oQh" secondAttribute="leading" constant="24" id="TmS-7c-fDf"/>
+                            <constraint firstItem="zMB-TO-CBN" firstAttribute="top" secondItem="Uba-1g-Ks0" secondAttribute="bottom" constant="8" id="UFJ-hO-pON"/>
+                            <constraint firstAttribute="trailing" secondItem="i05-jr-TkG" secondAttribute="trailing" id="UnQ-uP-ary"/>
+                            <constraint firstItem="zMB-TO-CBN" firstAttribute="trailing" secondItem="Jt6-Ue-oQh" secondAttribute="trailing" id="Xx1-Zu-4W1"/>
+                            <constraint firstItem="Q22-yK-IYL" firstAttribute="top" secondItem="Jt6-Ue-oQh" secondAttribute="top" constant="10" id="Zfo-GR-CcV"/>
+                            <constraint firstItem="Jt6-Ue-oQh" firstAttribute="trailing" secondItem="Uba-1g-Ks0" secondAttribute="trailing" constant="24" id="dP2-h4-f7O"/>
+                            <constraint firstItem="zMB-TO-CBN" firstAttribute="bottom" secondItem="Jt6-Ue-oQh" secondAttribute="bottom" id="fpv-Y7-qj0"/>
+                            <constraint firstItem="Uba-1g-Ks0" firstAttribute="top" secondItem="P7J-nV-zGz" secondAttribute="bottom" constant="10" id="pOb-FD-tyc"/>
+                            <constraint firstItem="Q22-yK-IYL" firstAttribute="leading" secondItem="Jt6-Ue-oQh" secondAttribute="leading" constant="20" id="rmz-eG-SrR"/>
+                            <constraint firstItem="Jt6-Ue-oQh" firstAttribute="trailing" secondItem="P7J-nV-zGz" secondAttribute="trailing" constant="24" id="wAS-9G-Jh5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerLabel" destination="P7J-nV-zGz" id="T8h-aC-LFU"/>
+                        <outlet property="infoLabel" destination="Uba-1g-Ks0" id="dQG-Q6-due"/>
+                        <outlet property="pincodeHeightConstraint" destination="OPB-Eq-e4F" id="Mvk-DC-tKI"/>
+                        <outlet property="pincodeView" destination="gmI-tu-vV9" id="V8w-x7-V2E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d0u-tX-zr1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="light_background" width="750" height="1574"/>
+        <image name="menu_back" width="20.5" height="18"/>
+    </resources>
+</document>

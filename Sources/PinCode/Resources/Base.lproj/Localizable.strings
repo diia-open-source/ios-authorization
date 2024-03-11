@@ -1,0 +1,29 @@
+// MARK: - Emoji
+
+// MARK: - Accessibility
+"auth_accessibility_pincode_clear_button_label" = "Видалити";
+"general_accessibility_back_button_label" = "Назад";
+"general_accessibility_back_button_hint" = "Натисніть двічі, щоб повернутися на попередній крок.";
+"general_accessibility_back_button_step" = "Натисніть двічі, щоб повернутися на попередній крок.";
+"auth_accessibility_biometry_request_approve" = "Натисніть двічі, щоб дозволити вхід з Touch ID.";
+"auth_accessibility_biometry_request_later" = "Натисніть двічі, щоб перейти на наступний крок";
+
+
+// MARK: - General
+"general_step" = "Крок %@ з %@";
+
+// MARK: - Authorization
+"authorization_create_pincode" = "Придумайте\nкод з %@ цифр";
+"authorization_repeat_pincode" = "Повторіть\nкод з %@ цифр";
+"auth_accessibility_pincode_header_hint" = "Натискайте на цифри двічі, щоб ввести";
+
+"authorization_allow" = "Дозволити";
+"authorization_allow_later" = "Дозволю пізніше";
+
+"authorization_new_pin_details" = "Цей код ви будете вводити для входу у застосунок Дія.";
+"authorization_repeat_pin_details" = "Переконайтеся, що не помилилися і пам'ятаєте код для входу.";
+
+// MARK: - Menu
+"menu_change_pin_new" = "Новий код з %@ цифр";
+"menu_change_pin_olddescr" = "Щоб впевнитися, що це ви змінюєте код для входу.";
+"menu_change_pin_repeat" = "Повторіть код з %@ цифр";

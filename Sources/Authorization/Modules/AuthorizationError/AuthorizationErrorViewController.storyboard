@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Authorization Error View Controller-->
+        <scene sceneID="Z4K-r0-lhq">
+            <objects>
+                <viewController storyboardIdentifier="AuthorizationErrorViewController" id="DRM-lf-skZ" customClass="AuthorizationErrorViewController" customModule="DiiaAuthorization" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ysM-12-daS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_background" translatesAutoresizingMaskIntoConstraints="NO" id="Q4O-ta-7S0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="366" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="58E-PL-1D4" customClass="StubMessageViewV2" customModule="DiiaUIComponents">
+                                <rect key="frame" x="24" y="384" width="366" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZB-br-yTa">
+                                <rect key="frame" x="0.0" y="699" width="414" height="163"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JW0-a3-RIx" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                        <rect key="frame" x="92" y="43" width="230" height="48"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="230" id="EfR-ko-YhN"/>
+                                            <constraint firstAttribute="height" constant="48" id="P1h-CR-2bH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="mainButtonTapped" destination="DRM-lf-skZ" eventType="touchUpInside" id="fc7-Mv-s3Y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkI-B0-Vxo">
+                                        <rect key="frame" x="120" y="111" width="174" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="umU-wE-rve"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                        <state key="normal" title="[Копіювати номер пристрою]">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="alternativeButtonTapped" destination="DRM-lf-skZ" eventType="touchUpInside" id="Tdt-5D-sZP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="bottom_group_failauth"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="dkI-B0-Vxo" secondAttribute="bottom" constant="34" id="YDj-lI-vbG"/>
+                                    <constraint firstItem="JW0-a3-RIx" firstAttribute="top" secondItem="wZB-br-yTa" secondAttribute="top" constant="43" id="evE-pt-S1u"/>
+                                    <constraint firstItem="dkI-B0-Vxo" firstAttribute="top" secondItem="JW0-a3-RIx" secondAttribute="bottom" constant="20" id="fng-ed-kor"/>
+                                    <constraint firstItem="JW0-a3-RIx" firstAttribute="centerX" secondItem="wZB-br-yTa" secondAttribute="centerX" id="jgV-HW-2ih"/>
+                                    <constraint firstItem="dkI-B0-Vxo" firstAttribute="centerX" secondItem="wZB-br-yTa" secondAttribute="centerX" id="md5-tc-Rs1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fzP-uN-BHx"/>
+                        <color key="backgroundColor" red="0.77100000000000002" green="0.85299999999999998" blue="0.91200000000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Q4O-ta-7S0" firstAttribute="trailing" secondItem="fzP-uN-BHx" secondAttribute="trailing" id="GfU-oh-4w4"/>
+                            <constraint firstItem="58E-PL-1D4" firstAttribute="centerY" secondItem="ysM-12-daS" secondAttribute="centerY" id="TNp-Tq-FBx"/>
+                            <constraint firstItem="wZB-br-yTa" firstAttribute="bottom" secondItem="fzP-uN-BHx" secondAttribute="bottom" id="ahB-mH-uTe"/>
+                            <constraint firstItem="Q4O-ta-7S0" firstAttribute="leading" secondItem="fzP-uN-BHx" secondAttribute="leading" id="bqo-vS-jc0"/>
+                            <constraint firstItem="fzP-uN-BHx" firstAttribute="trailing" secondItem="wZB-br-yTa" secondAttribute="trailing" id="eDh-h1-Le6"/>
+                            <constraint firstItem="Q4O-ta-7S0" firstAttribute="top" secondItem="ysM-12-daS" secondAttribute="top" id="fbS-FM-Ngw"/>
+                            <constraint firstItem="wZB-br-yTa" firstAttribute="leading" secondItem="fzP-uN-BHx" secondAttribute="leading" id="iVP-rq-BA5"/>
+                            <constraint firstItem="fzP-uN-BHx" firstAttribute="trailing" secondItem="58E-PL-1D4" secondAttribute="trailing" constant="24" id="n6C-3v-2PB"/>
+                            <constraint firstAttribute="bottom" secondItem="Q4O-ta-7S0" secondAttribute="bottom" id="n7d-Ey-lkJ"/>
+                            <constraint firstItem="58E-PL-1D4" firstAttribute="leading" secondItem="fzP-uN-BHx" secondAttribute="leading" constant="24" id="qg4-md-H8O"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alternativeButton" destination="dkI-B0-Vxo" id="Oc6-qo-XVF"/>
+                        <outlet property="mainButton" destination="JW0-a3-RIx" id="1UF-Ym-VvO"/>
+                        <outlet property="stubMessageView" destination="58E-PL-1D4" id="7Zt-Ff-utl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4r-8U-Y8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="72" y="53"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="light_background" width="750" height="1574"/>
+    </resources>
+</document>

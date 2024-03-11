@@ -1,0 +1,26 @@
+
+# UI
+- .*ViewController.*.swift
+- .*View.swift
+- .*UIView.*.swift
+- .*Cell.*.swift
+
+# General
+- .*Module.swift
+- .*ApiClient.swift
+
+# No any logic
+- AppConstants.swift
+- AuthApiResponses.swift
+- BankIDAuthorizationModuleContext.swift
+- .*Response.swift
+- .*Type.swift
+- .*Model.swift
+- PinCodeModuleContexts.swift
+- PinCodeViewModel.swift
+- BiometryRequestViewModel.swift
+- EnterPinCodeViewModel.swift
+
+# Resource Files
+- R+Strings.swift
+- R+images.swift

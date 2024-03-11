@@ -1,0 +1,95 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "d120af1e8638c7da36c8481fd61a66c0c08dc4fc",
+        "version" : "5.4.4"
+      }
+    },
+    {
+      "identity" : "ios-commonservices",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/diia-open-source/ios-commonservices.git",
+      "state" : {
+        "revision" : "f6dace7885d74a491fb1802e547826a07ab28af9",
+        "version" : "1.0.10"
+      }
+    },
+    {
+      "identity" : "ios-commontypes",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/diia-open-source/ios-commontypes.git",
+      "state" : {
+        "revision" : "266d60228e62f4e4f6d5983e58f442c161438009",
+        "version" : "1.0.15"
+      }
+    },
+    {
+      "identity" : "ios-mvpmodule",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/diia-open-source/ios-mvpmodule.git",
+      "state" : {
+        "revision" : "1bb81cb1db77295939ef0e915a27962380d95396",
+        "version" : "1.0.15"
+      }
+    },
+    {
+      "identity" : "ios-network",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/diia-open-source/ios-network.git",
+      "state" : {
+        "revision" : "bf51df19b0afea771893fa4baae70b1350e1f151",
+        "version" : "1.0.9"
+      }
+    },
+    {
+      "identity" : "ios-uicomponents",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/diia-open-source/ios-uicomponents.git",
+      "state" : {
+        "revision" : "ab54579e453f982e3b239bc43cc596eb8f8ba684",
+        "version" : "1.0.13"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher",
+      "state" : {
+        "revision" : "d06df9adf50ed8cde5786d935836a5f445f780ba",
+        "version" : "6.3.1"
+      }
+    },
+    {
+      "identity" : "lottie-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-spm.git",
+      "state" : {
+        "revision" : "60ea4f82fba8b4cb21a75665a889e86ed4d81c6e",
+        "version" : "4.2.0"
+      }
+    },
+    {
+      "identity" : "reactivekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DeclarativeHub/ReactiveKit.git",
+      "state" : {
+        "revision" : "0e553b1af3bc3b6932fa2b0207b11244ba69c1db",
+        "version" : "3.16.4"
+      }
+    },
+    {
+      "identity" : "swiftmessages",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftKickMobile/SwiftMessages",
+      "state" : {
+        "revision" : "62e12e138fc3eedf88c7553dd5d98712aa119f40",
+        "version" : "9.0.9"
+      }
+    }
+  ],
+  "version" : 2
+}
