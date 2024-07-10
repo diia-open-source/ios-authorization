@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/diia-open-source/ios-network.git",
       "state" : {
-        "revision" : "bf51df19b0afea771893fa4baae70b1350e1f151",
-        "version" : "1.0.9"
+        "revision" : "075c245a7270461a0ad23205332430fb2418ef53",
+        "version" : "1.0.10"
       }
     },
     {

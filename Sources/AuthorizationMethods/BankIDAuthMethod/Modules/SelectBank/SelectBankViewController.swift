@@ -75,7 +75,9 @@ final class SelectBankViewController: UIViewController, Storyboarded {
             placeholder: R.Strings.authorization_search.localized(),
             delegate: searchTextField,
             isActive: false,
-            textChangeCallback: textChanged
+            textChangeCallback: { [weak self] in
+                self?.textChanged()
+            }
         )
     }
     
@@ -100,7 +102,7 @@ final class SelectBankViewController: UIViewController, Storyboarded {
     }
     
     // MARK: - Actions
-    @objc private func textChanged() {
+    private func textChanged() {
         presenter.search(text: searchTextField.searchText)
     }
     

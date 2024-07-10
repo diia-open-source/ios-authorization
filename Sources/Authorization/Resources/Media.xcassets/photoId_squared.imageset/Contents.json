@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "photoId_squared.png",
+      "filename" : "photoId.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "photoId_squared@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "photoId_squared@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
