@@ -1,6 +1,7 @@
 import Foundation
 import DiiaMVPModule
 import DiiaAuthorization
+import DiiaCommonTypes
 
 public class PinCodeViewModel {
     let pinCodeLength: Int

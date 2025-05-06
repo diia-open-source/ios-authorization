@@ -22,7 +22,6 @@ class PincodeView: UIView {
     @IBOutlet private var digitButtons: [VerticalRoundButton]!
     
     // MARK: - Constraints
-    @IBOutlet weak private var digitButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak private var indicatorsTopConstraint: NSLayoutConstraint!
     @IBOutlet weak private var buttonsTopConstraint: NSLayoutConstraint!
     @IBOutlet weak private var buttonsBottompConstraint: NSLayoutConstraint!
@@ -106,7 +105,6 @@ class PincodeView: UIView {
         buttonsVerticalStack.spacing = Constants.verticalInteritemSpacing
         buttonsHorizontalStacks.forEach { $0.spacing = Constants.horizontalInteritemSpacing }
         indicatorsStack.spacing = Constants.indicatorsInteritemSpacing
-        digitButtonHeightConstraint.constant = Constants.digitButtonHeight
         indicatorsTopConstraint.constant = Constants.indicatorsTopOffset
         buttonsTopConstraint.constant = Constants.buttonsTopOffset
         buttonsBottompConstraint.constant = Constants.buttonsBottomOffset
@@ -184,6 +182,9 @@ extension PincodeView {
         
         static var indicatorSize: CGFloat = 11
         static var indicatorsInteritemSpacing: CGFloat = 8
+        static var horizontalInteritemSpacing: CGFloat = 32
+        static var verticalInteritemSpacing: CGFloat = 16
+        
         static var indicatorsTopOffset: CGFloat {
             switch UIDevice.size() {
             case .screen4Inch, .screen_zoomed: return 17
@@ -192,19 +193,6 @@ extension PincodeView {
             default: return 20
             }
         }
-        
-        static var horizontalInteritemSpacing: CGFloat = 32
-        
-        static var digitButtonHeight: CGFloat {
-            switch UIDevice.size() {
-            case .screen4Inch, .screen_zoomed: return 75
-            case .screen5_5Inch, .screen6_1Inch: return 75
-            case .screen6_5Inch, .screen6_7Inch: return 88
-            default: return 88
-            }
-        }
-        
-        static var verticalInteritemSpacing: CGFloat = 16
         
         static var buttonsTopOffset: CGFloat {
             switch UIDevice.size() {

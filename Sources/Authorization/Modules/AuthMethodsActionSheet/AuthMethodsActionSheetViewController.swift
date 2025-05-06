@@ -105,6 +105,8 @@ final class AuthMethodsActionSheetViewController: UIViewController, ChildSubcont
         
         button.titleLabel?.font = FontBook.smallHeadingFont
         button.setImage(image, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFill
+        button.imageEdgeInsets = .zero
         button.addTarget(self, action: action, for: .touchUpInside)
         
         return button

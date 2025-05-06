@@ -1,5 +1,6 @@
 import Foundation
 import DiiaNetwork
+import DiiaCommonTypes
 
 public enum AuthorizationAPI: CommonService {
     static var host: String = ""

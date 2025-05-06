@@ -1,6 +1,7 @@
 import UIKit
 import DiiaMVPModule
 import DiiaAuthorization
+import DiiaCommonTypes
 
 public class BiometryRequestViewModel {
     

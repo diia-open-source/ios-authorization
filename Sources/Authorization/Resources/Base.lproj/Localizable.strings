@@ -10,7 +10,7 @@
 "authorization_error_already_auth" = "😕\nВас уже авторизовано у застосунку.";
 "authorization_error_logout_first" = "Для авторизації іншим методом, необхідно спочатку вийти із застосунку.";
 "authorization_nfc" = "NFC";
-"auth_methods_bankId" = "BankID";
+"auth_methods_bankId" = "BankID НБУ";
 "auth_methods_monobank" = "monobank";
 "auth_methods_privatBank" = "Приват24";
 

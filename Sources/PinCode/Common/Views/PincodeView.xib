@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +15,6 @@
                 <outlet property="buttonsTopConstraint" destination="DVP-Zz-833" id="HwB-6D-zRB"/>
                 <outlet property="buttonsVerticalStack" destination="RcT-Ka-OPr" id="T1J-Vu-o4T"/>
                 <outlet property="clearButton" destination="gha-lB-Rsw" id="gHs-nx-SUO"/>
-                <outlet property="digitButtonHeightConstraint" destination="8KN-tQ-Xlo" id="nmK-Fq-xOL"/>
                 <outlet property="indicatorsStack" destination="pPa-tI-cdm" id="LKf-M0-5op"/>
                 <outlet property="indicatorsTopConstraint" destination="szc-9X-MMy" id="CIt-rc-6Ai"/>
                 <outletCollection property="buttonsHorizontalStacks" destination="SlW-h4-uUf" collectionClass="NSMutableArray" id="JMC-Hh-Oi1"/>
@@ -40,26 +39,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="center" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="12" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pPa-tI-cdm" userLabel="Indicators Stack">
-                    <rect key="frame" x="100" y="22" width="214" height="12"/>
+                    <rect key="frame" x="100" y="22" width="214" height="208"/>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="RcT-Ka-OPr" userLabel="Horizontal Buttons Stack">
-                    <rect key="frame" x="52.5" y="70" width="309" height="380"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="RcT-Ka-OPr" userLabel="Verical Buttons Stack">
+                    <rect key="frame" x="126" y="266" width="162" height="184"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="SlW-h4-uUf">
-                            <rect key="frame" x="0.0" y="0.0" width="309" height="83"/>
+                            <rect key="frame" x="0.0" y="0.0" width="162" height="34"/>
                             <subviews>
                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8n1-lG-YkW" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
-                                    <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="8n1-lG-YkW" secondAttribute="height" multiplier="1:1" id="1Xo-04-0bY"/>
-                                        <constraint firstAttribute="height" constant="83" id="8KN-tQ-Xlo"/>
                                     </constraints>
                                     <state key="normal" title="1">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bQ-b2-GNd" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
-                                    <rect key="frame" x="113" y="0.0" width="83" height="83"/>
+                                    <rect key="frame" x="64" y="0.0" width="34" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="2bQ-b2-GNd" secondAttribute="height" multiplier="1:1" id="vE1-UC-2PF"/>
                                     </constraints>
@@ -68,7 +66,7 @@
                                     </state>
                                 </button>
                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeU-KU-kFi" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
-                                    <rect key="frame" x="226" y="0.0" width="83" height="83"/>
+                                    <rect key="frame" x="128" y="0.0" width="34" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="BeU-KU-kFi" secondAttribute="height" multiplier="1:1" id="OGT-GB-jSW"/>
                                     </constraints>
@@ -79,10 +77,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dbF-fs-e0w">
-                            <rect key="frame" x="0.0" y="99" width="309" height="83"/>
+                            <rect key="frame" x="0.0" y="50" width="162" height="34"/>
                             <subviews>
                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQB-kA-6hu" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
-                                    <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="sQB-kA-6hu" secondAttribute="height" multiplier="1:1" id="Gd2-fp-DMT"/>
                                     </constraints>
@@ -91,7 +89,7 @@
                                     </state>
                                 </button>
                                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cz-LC-WbE" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
-                                    <rect key="frame" x="113" y="0.0" width="83" height="83"/>
+                                    <rect key="frame" x="64" y="0.0" width="34" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="2cz-LC-WbE" secondAttribute="height" multiplier="1:1" id="jyg-uh-O2V"/>
                                     </constraints>
@@ -100,7 +98,7 @@
                                     </state>
                                 </button>
                                 <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEi-aS-4kH" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
-                                    <rect key="frame" x="226" y="0.0" width="83" height="83"/>
+                                    <rect key="frame" x="128" y="0.0" width="34" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="bEi-aS-4kH" secondAttribute="height" multiplier="1:1" id="1We-5t-X36"/>
                                     </constraints>
@@ -111,10 +109,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6Fd-fI-ku5">
-                            <rect key="frame" x="0.0" y="198" width="309" height="83"/>
+                            <rect key="frame" x="0.0" y="100" width="162" height="34"/>
                             <subviews>
                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab2-1D-YEL" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
-                                    <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="ab2-1D-YEL" secondAttribute="height" multiplier="1:1" id="Wbv-HK-sZv"/>
                                     </constraints>
@@ -123,7 +121,7 @@
                                     </state>
                                 </button>
                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqI-uj-G3x" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
-                                    <rect key="frame" x="113" y="0.0" width="83" height="83"/>
+                                    <rect key="frame" x="64" y="0.0" width="34" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="MqI-uj-G3x" secondAttribute="height" multiplier="1:1" id="PMV-rX-05l"/>
                                     </constraints>
@@ -132,7 +130,7 @@
                                     </state>
                                 </button>
                                 <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uML-S0-gUm" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
-                                    <rect key="frame" x="226" y="0.0" width="83" height="83"/>
+                                    <rect key="frame" x="128" y="0.0" width="34" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="uML-S0-gUm" secondAttribute="height" multiplier="1:1" id="Siv-gD-dFY"/>
                                     </constraints>
@@ -143,10 +141,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gvC-sm-9hI">
-                            <rect key="frame" x="0.0" y="297" width="309" height="83"/>
+                            <rect key="frame" x="0.0" y="150" width="162" height="34"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCQ-kR-wUN">
-                                    <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="eCQ-kR-wUN" secondAttribute="height" multiplier="1:1" id="EH7-Uc-PaH"/>
                                     </constraints>
@@ -157,7 +155,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akp-Jv-zwQ" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
-                                    <rect key="frame" x="113" y="0.0" width="83" height="83"/>
+                                    <rect key="frame" x="64" y="0.0" width="34" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="akp-Jv-zwQ" secondAttribute="height" multiplier="1:1" id="kBX-q6-e3V"/>
                                     </constraints>
@@ -166,7 +164,7 @@
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gha-lB-Rsw">
-                                    <rect key="frame" x="226" y="0.0" width="83" height="83"/>
+                                    <rect key="frame" x="128" y="0.0" width="34" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="gha-lB-Rsw" secondAttribute="height" multiplier="1:1" id="6u3-LM-kkI"/>
                                     </constraints>
