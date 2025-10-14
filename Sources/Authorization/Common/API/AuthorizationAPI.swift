@@ -1,6 +1,7 @@
 import Foundation
 import DiiaNetwork
 import DiiaCommonTypes
+import UIKit
 
 public enum AuthorizationAPI: CommonService {
     static var host: String = ""
@@ -14,14 +15,15 @@ public enum AuthorizationAPI: CommonService {
     case prolong(processId: String, token: String)
     case logout(token: String, mobileID: String)
     case authMethods(token: String)
-    case verify(target: AuthTarget, requestId: String, processId: String, bankCode: String?, token: String)
-    case verificationAuthMethods(flow: VerificationFlowProtocol, processId: String?, token: String)
+    case verify(target: AuthTarget, requestId: String, processId: String, parameters: [String: String]?, token: String)
+    case verificationAuthMethods(flow: VerificationFlowProtocol, processId: String?, selectedMethod: String?, token: String)
+    case otpScreen(processId: String, nfcAvailable: Bool)
 
     public var method: HTTPMethod {
         switch self {
         case .refreshToken, .logout:
             return .post
-        case .getToken, .getAuthUrl, .getAuthUrlv3, .authMethods, .getTemporaryToken, .verificationAuthMethods, .verify, .prolong:
+        case .getToken, .getAuthUrl, .getAuthUrlv3, .authMethods, .getTemporaryToken, .verificationAuthMethods, .verify, .prolong, .otpScreen:
             return .get
         }
     }
@@ -46,8 +48,10 @@ public enum AuthorizationAPI: CommonService {
             return "v1/auth/methods"
         case .verify(let target, let requestId, _, _, _):
             return "v1/auth/\(target.rawValue)/\(requestId)/verify"
-        case .verificationAuthMethods(let activityType, _, _):
+        case .verificationAuthMethods(let activityType, _, _, _):
             return "v3/auth/\(activityType.flowCode)/methods"
+        case .otpScreen:
+            return "v1/auth/otp/screen"
         }
     }
 
@@ -55,22 +59,26 @@ public enum AuthorizationAPI: CommonService {
         switch self {
         case .getToken(let processId):
             return ["processId": processId]
-        case  .verificationAuthMethods(_, let processId, _):
-            return ["processId": processId ?? ""]
+        case  .verificationAuthMethods(_, let processId, let selectedMethod, _):
+            if let processId {
+                return ["processId": processId]
+            }
+            if let selectedMethod {
+                return ["selectedMethod": selectedMethod]
+            }
+            return nil
         case .getAuthUrlv3(_, let processId, let trueDepthAvailable, _):
             return ["processId": processId ?? "",
                     "builtInTrueDepthCamera": trueDepthAvailable]
         case .prolong(let processId, _):
             return ["processId": processId]
-        case .verify(_, _, let processId, let bankCode, _):
-            if let bankCode = bankCode {
-                return [
-                    "bankId": bankCode,
-                    "processId": processId
-                ]
-            } else {
-                return ["processId": processId]
-            }
+        case .verify(_, _, let processId, let parameters, _):
+            var parameters = parameters ?? [:]
+            parameters["processId"] = processId
+            return parameters
+        case .otpScreen(let processId, let nfcAvailable):
+            return ["processId": processId,
+                    "nfcAvailable": nfcAvailable.description]
         default:
             return nil
         }
@@ -94,14 +102,17 @@ public enum AuthorizationAPI: CommonService {
                 .getAuthUrlv3(_, _, _, let token),
                 .verify(_, _, _, _, let token):
             headersCandidate?["authorization"] = "bearer \(token)"
+            headersCandidate?["Advertising-Id"] = UIDevice.current.identifierForVendor?.uuidString ?? ""
             return headersCandidate
         case .logout(let token, let mobileUID):
             headersCandidate?["authorization"] = "bearer \(token)"
             headersCandidate?["mobile_uid"] = mobileUID
+            headersCandidate?["Advertising-Id"] = UIDevice.current.identifierForVendor?.uuidString ?? mobileUID
             return headersCandidate
-        case .verificationAuthMethods(let activityType, _, let token):
+        case .verificationAuthMethods(let activityType, _, _, let token):
             if activityType.isAuthorization { break }
             headersCandidate?["authorization"] = "bearer \(token)"
+            headersCandidate?["Advertising-Id"] = UIDevice.current.identifierForVendor?.uuidString ?? ""
             return headersCandidate
         default:
             break
@@ -123,6 +134,8 @@ public enum AuthorizationAPI: CommonService {
                 return NetworkActionKey.photoIdAuthUrl.rawValue
             case .nfc:
                 return NetworkActionKey.nfcAuthUrl.rawValue
+            case .smsOtp:
+                return NetworkActionKey.otpScreen.rawValue
             }
         case .getToken:
             return NetworkActionKey.getToken.rawValue
@@ -140,6 +153,8 @@ public enum AuthorizationAPI: CommonService {
             return NetworkActionKey.verify.rawValue
         case .verificationAuthMethods:
             return NetworkActionKey.verificationAuthMethods.rawValue
+        case .otpScreen:
+            return NetworkActionKey.otpScreen.rawValue
         }
     }
     
@@ -160,4 +175,5 @@ private enum NetworkActionKey: String {
     case authMethods
     case verify
     case verificationAuthMethods
+    case otpScreen
 }

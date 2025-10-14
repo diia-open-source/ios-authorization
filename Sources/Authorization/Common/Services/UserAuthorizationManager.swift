@@ -167,7 +167,7 @@ public class UserAuthorizationManager: DisposeBagProvider, BindingExecutionConte
         view?.showProgress()
         
         apiClient
-            .verify(target: target, requestId: requestId, processId: processId, bankCode: getBankCode(parameters: parameters))
+            .verify(target: target, requestId: requestId, processId: processId, parameters: parameters)
             .observe { [weak self, weak view] signal in
                 guard let view = view else { return }
                 view.hideProgress()
@@ -175,10 +175,10 @@ public class UserAuthorizationManager: DisposeBagProvider, BindingExecutionConte
                 switch signal {
                 case .next(let alertTemplateResponse):
                     self?.analyticsHandler.trackSuccessForTarget(target: target)
-                    self?.authorizationService?.isAuthorizingByDeeplink = false
                     TemplateHandler.handleGlobal(alertTemplateResponse.template,
                                            callback: { [weak self] action in
                         self?.flow.onCompletion(in: view, action: action)
+                        self?.authorizationService?.isAuthorizingByDeeplink = false
                     })
                 case .failed(let error):
                     self?.analyticsHandler.trackFailForTarget(target: target, error: error)
@@ -278,19 +278,5 @@ public class UserAuthorizationManager: DisposeBagProvider, BindingExecutionConte
             )
             .observe { _ in self.storage.removeLogoutToken() }
             .dispose(in: bag)
-    }
-    
-    private func getBankCode(parameters: [String: String]?) -> String? {
-        guard let parameters = parameters, let bankCode = parameters[Constants.bankIdKey] else {
-            return nil
-        }
-        return bankCode
-    }
-}
-
-// MARK: - Constants
-private extension UserAuthorizationManager {
-    enum Constants {
-        static let bankIdKey: String = "bankId"
     }
 }

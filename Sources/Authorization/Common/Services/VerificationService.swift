@@ -65,7 +65,7 @@ extension VerificationService {
                                          completionHandler: @escaping (DiiaIdResult<String, Error>) -> Void) {
         view.showProgress()
         authApiClient
-            .verificationAuthMethods(flow: flow, processId: self.authorizationService.getProcessId())
+            .verificationAuthMethods(flow: flow, processId: self.authorizationService.getProcessId(), selectedMethod: nil)
             .observe { [weak self, weak view] signal in
                 guard let self = self, let view = view else { return }
                 switch signal {
@@ -105,7 +105,7 @@ extension VerificationService {
     ) {
         let activityData = AuthActivityViewData(
             title: response.title ?? "",
-            authMethods: response.authMethods?.map { $0.toAuthMethod() } ?? []
+            authMethods: response.authMethods ?? []
         )
         guard let template = response.template else {
             showAvaliableAuthMethods(with: activityData, flow: flow, view: view, completionHandler: completionHandler)

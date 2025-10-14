@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVu-uN-Car">
-                                <rect key="frame" x="16" y="577.5" width="382" height="284.5"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVu-uN-Car">
+                                <rect key="frame" x="16" y="482" width="382" height="298"/>
                                 <subviews>
                                     <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressImage="loadingBar" translatesAutoresizingMaskIntoConstraints="NO" id="Kyw-hH-Vyr">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="4"/>
@@ -27,59 +27,68 @@
                                         </constraints>
                                         <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </progressView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UqO-EQ-fXf">
-                                        <rect key="frame" x="24" y="218.5" width="334" height="2"/>
-                                        <color key="backgroundColor" red="0.792156862745098" green="0.8666666666666667" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="PiI-AV-gbn"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sj9-sf-j1X" customClass="ActionButton" customModule="DiiaUIComponents">
-                                        <rect key="frame" x="24" y="220.5" width="334" height="64"/>
-                                    </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="334" placeholderIntrinsicHeight="100" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="gxl-oA-3jt">
-                                        <rect key="frame" x="24" y="94.5" width="334" height="100"/>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Щоб створити Дія ID, будь ласка, підтвердьте особу користувача]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdC-6d-VaF">
-                                        <rect key="frame" x="24" y="32" width="334" height="38.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Щоб створити Дія ID, будь ласка, підтвердьте особу користувача]" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdC-6d-VaF">
+                                        <rect key="frame" x="32" y="32" width="318" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UqO-EQ-fXf">
+                                        <rect key="frame" x="16" y="90.5" width="350" height="1"/>
+                                        <color key="backgroundColor" red="0.792156862745098" green="0.8666666666666667" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="PiI-AV-gbn"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbd-OC-XU7" customClass="DSWhiteColoredListView" customModule="DiiaUIComponents">
+                                        <rect key="frame" x="16" y="95.5" width="350" height="198.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Kyw-hH-Vyr" firstAttribute="leading" secondItem="uVu-uN-Car" secondAttribute="leading" id="0K8-SU-kWR"/>
-                                    <constraint firstAttribute="bottom" secondItem="sj9-sf-j1X" secondAttribute="bottom" id="4Ht-Er-oal"/>
-                                    <constraint firstAttribute="trailing" secondItem="sj9-sf-j1X" secondAttribute="trailing" constant="24" id="7rF-FR-qD5"/>
-                                    <constraint firstAttribute="trailing" secondItem="UqO-EQ-fXf" secondAttribute="trailing" constant="24" id="AUZ-zZ-Ri7"/>
-                                    <constraint firstAttribute="bottom" secondItem="UqO-EQ-fXf" secondAttribute="bottom" constant="64" id="AgF-6K-fBv"/>
-                                    <constraint firstItem="TdC-6d-VaF" firstAttribute="leading" secondItem="uVu-uN-Car" secondAttribute="leading" constant="24" id="Cd0-sD-KNE"/>
+                                    <constraint firstAttribute="trailing" secondItem="UqO-EQ-fXf" secondAttribute="trailing" constant="16" id="AUZ-zZ-Ri7"/>
+                                    <constraint firstItem="TdC-6d-VaF" firstAttribute="leading" secondItem="uVu-uN-Car" secondAttribute="leading" constant="32" id="Cd0-sD-KNE"/>
                                     <constraint firstAttribute="trailing" secondItem="Kyw-hH-Vyr" secondAttribute="trailing" id="Fre-Gj-rBc"/>
-                                    <constraint firstItem="UqO-EQ-fXf" firstAttribute="leading" secondItem="uVu-uN-Car" secondAttribute="leading" constant="24" id="HYn-MC-lC5"/>
-                                    <constraint firstItem="gxl-oA-3jt" firstAttribute="centerX" secondItem="uVu-uN-Car" secondAttribute="centerX" id="Qzg-0g-wx6"/>
-                                    <constraint firstAttribute="trailing" secondItem="TdC-6d-VaF" secondAttribute="trailing" constant="24" id="dPX-yM-QQm"/>
-                                    <constraint firstItem="UqO-EQ-fXf" firstAttribute="top" secondItem="gxl-oA-3jt" secondAttribute="bottom" constant="24" id="gF5-sE-QrH"/>
-                                    <constraint firstItem="sj9-sf-j1X" firstAttribute="top" secondItem="UqO-EQ-fXf" secondAttribute="bottom" id="jfT-Ro-1OW"/>
-                                    <constraint firstItem="gxl-oA-3jt" firstAttribute="top" secondItem="TdC-6d-VaF" secondAttribute="bottom" constant="24" id="p1i-ER-zIn"/>
+                                    <constraint firstItem="UqO-EQ-fXf" firstAttribute="top" secondItem="TdC-6d-VaF" secondAttribute="bottom" constant="20" id="HDr-q9-BYm"/>
+                                    <constraint firstItem="UqO-EQ-fXf" firstAttribute="leading" secondItem="uVu-uN-Car" secondAttribute="leading" constant="16" id="HYn-MC-lC5"/>
+                                    <constraint firstItem="kbd-OC-XU7" firstAttribute="leading" secondItem="uVu-uN-Car" secondAttribute="leading" constant="16" id="MxO-XW-dP2"/>
+                                    <constraint firstAttribute="bottom" secondItem="kbd-OC-XU7" secondAttribute="bottom" constant="4" id="WVq-3b-EEN"/>
+                                    <constraint firstAttribute="trailing" secondItem="TdC-6d-VaF" secondAttribute="trailing" constant="32" id="dPX-yM-QQm"/>
+                                    <constraint firstAttribute="trailing" secondItem="kbd-OC-XU7" secondAttribute="trailing" constant="16" id="g4A-bl-T9P"/>
                                     <constraint firstItem="Kyw-hH-Vyr" firstAttribute="top" secondItem="uVu-uN-Car" secondAttribute="top" id="qEM-8l-Oes"/>
-                                    <constraint firstItem="sj9-sf-j1X" firstAttribute="leading" secondItem="uVu-uN-Car" secondAttribute="leading" constant="24" id="rdm-lH-1HX"/>
                                     <constraint firstItem="TdC-6d-VaF" firstAttribute="top" secondItem="uVu-uN-Car" secondAttribute="top" constant="32" id="u0e-Z4-BAZ"/>
+                                    <constraint firstItem="kbd-OC-XU7" firstAttribute="top" secondItem="UqO-EQ-fXf" secondAttribute="bottom" constant="4" id="uv0-1s-lfs"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sj9-sf-j1X" customClass="ActionButton" customModule="DiiaUIComponents">
+                                <rect key="frame" x="16" y="788" width="382" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="l4t-5g-6OV"/>
+                                </constraints>
+                                <state key="normal" title="Закрити">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zam-px-fOf"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="sj9-sf-j1X" firstAttribute="bottom" secondItem="Zam-px-fOf" secondAttribute="bottom" constant="16" id="3nu-fO-vCn"/>
                             <constraint firstItem="uVu-uN-Car" firstAttribute="leading" secondItem="Zam-px-fOf" secondAttribute="leading" constant="16" id="7yh-wl-hSl"/>
                             <constraint firstItem="Zam-px-fOf" firstAttribute="trailing" secondItem="uVu-uN-Car" secondAttribute="trailing" constant="16" id="C3n-kQ-4tw"/>
-                            <constraint firstItem="Zam-px-fOf" firstAttribute="bottom" secondItem="uVu-uN-Car" secondAttribute="bottom" id="s2x-4M-hPb"/>
+                            <constraint firstItem="uVu-uN-Car" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Zam-px-fOf" secondAttribute="top" id="eQr-JU-eYS"/>
+                            <constraint firstItem="sj9-sf-j1X" firstAttribute="leading" secondItem="Zam-px-fOf" secondAttribute="leading" constant="16" id="eac-RS-nWE"/>
+                            <constraint firstItem="sj9-sf-j1X" firstAttribute="top" secondItem="uVu-uN-Car" secondAttribute="bottom" constant="8" id="g33-nr-j8P"/>
+                            <constraint firstItem="Zam-px-fOf" firstAttribute="trailing" secondItem="sj9-sf-j1X" secondAttribute="trailing" constant="16" id="vIa-lX-bNX"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonsStackView" destination="gxl-oA-3jt" id="vbs-rU-NAd"/>
+                        <outlet property="buttonsList" destination="kbd-OC-XU7" id="KBs-IY-e6M"/>
                         <outlet property="closeButton" destination="sj9-sf-j1X" id="otn-zF-8vQ"/>
-                        <outlet property="containerButtomConstraint" destination="s2x-4M-hPb" id="wkS-a1-XzA"/>
+                        <outlet property="containerButtomConstraint" destination="3nu-fO-vCn" id="10V-jt-dML"/>
                         <outlet property="containerView" destination="uVu-uN-Car" id="FNu-ch-46y"/>
                         <outlet property="loadingIndicator" destination="Kyw-hH-Vyr" id="fbo-pu-j9u"/>
                         <outlet property="separatorView" destination="UqO-EQ-fXf" id="5Hc-h1-Wxx"/>

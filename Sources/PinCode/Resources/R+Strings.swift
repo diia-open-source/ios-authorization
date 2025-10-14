@@ -11,6 +11,7 @@ internal extension R {
         case general_accessibility_back_button_step
         case auth_accessibility_biometry_request_approve
         case auth_accessibility_biometry_request_later
+        case general_accessibility_incorrect_password
         
         // MARK: - General
         case general_step

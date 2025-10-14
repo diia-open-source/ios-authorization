@@ -7,6 +7,7 @@
 "general_accessibility_back_button_step" = "Натисніть двічі, щоб повернутися на попередній крок.";
 "auth_accessibility_biometry_request_approve" = "Натисніть двічі, щоб дозволити вхід з Touch ID.";
 "auth_accessibility_biometry_request_later" = "Натисніть двічі, щоб перейти на наступний крок";
+"general_accessibility_incorrect_password" = "Неправильно введений пароль. Спробуйте ще раз";
 
 
 // MARK: - General

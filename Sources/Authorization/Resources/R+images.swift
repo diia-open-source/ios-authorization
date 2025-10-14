@@ -4,6 +4,7 @@ internal enum R {
     enum Image: String, CaseIterable {
         case clear
         case photoId_squared
+        case photoID
         case nfc_icon_squared
         case bankId_icon_squared
         case monobank

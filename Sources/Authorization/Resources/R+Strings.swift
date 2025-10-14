@@ -19,6 +19,7 @@ internal extension R {
         case auth_methods_bankId
         case auth_methods_monobank
         case auth_methods_privatBank
+        case auth_methods_photoID
         
         // MARK: - Accessibility
         case general_accessibility_close
@@ -26,6 +27,7 @@ internal extension R {
         case auth_accessibility_methods_title_hint
         case auth_accessibility_methods_close_hint
         case auth_accessibility_methods_bank
+        case auth_accessibility_method_photoID
         
         // MARK: - Menu
         case menu_copy_uid

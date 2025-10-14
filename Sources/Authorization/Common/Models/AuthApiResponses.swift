@@ -28,10 +28,16 @@ public struct RefreshTokenResponse: Decodable {
 public struct VerificationAuthMethodsResponse: Decodable {
     public let title: String?
     public let processId: String?
-    public let authMethods: [LoginAuthMethod]?
+    public let disabledMethods: [VerificationDisabledAuthMethods]
+    public let authMethods: [AuthMethod]?
     public let button: AlertButtonModel?
     public let skipAuthMethods: Bool?
     public let template: AlertTemplate?
+}
+
+public struct VerificationDisabledAuthMethods: Decodable {
+    public let code: String
+    public let description: String?
 }
 
 public struct AuthMethodsResponse: Decodable {
@@ -58,35 +64,18 @@ public struct AuthActivityViewData: Decodable {
     }
 }
 
-public enum LoginAuthMethod: String, Codable, CaseIterable {
-    case photoid
-    case nfc
-    case bankid
-    case monobank
-    case privatbank
-    
-    public func toAuthMethod() -> AuthMethod {
-        switch self {
-        case .photoid: return .photoId
-        case .nfc: return .nfc
-        case .bankid: return .bankId
-        case .monobank: return .monobank
-        case .privatbank: return .privatbank
-        }
-    }
-}
-
 public enum AuthMethod: String, Codable, CaseIterable {
-    case photoId
+    case photoId = "photoid"
     case nfc
-    case bankId
+    case bankId = "bankid"
     case monobank
     case privatbank
+    case smsOtp = "sms-otp"
     
     public var icon: UIImage? {
         switch self {
         case .photoId:
-            return R.Image.photoId_squared.image
+            return R.Image.photoID.image
         case .nfc:
             return R.Image.nfc_icon_squared.image
         case .bankId:
@@ -95,6 +84,8 @@ public enum AuthMethod: String, Codable, CaseIterable {
             return R.Image.monobank.image
         case .privatbank:
             return R.Image.privat24.image
+        case .smsOtp:
+            return nil
         }
     }
     
@@ -109,6 +100,8 @@ public enum AuthMethod: String, Codable, CaseIterable {
         case .privatbank:
             return R.Strings.auth_methods_privatBank.localized()
         case .photoId:
+            return R.Strings.auth_methods_photoID.localized()
+        case .smsOtp:
             return nil
         }
     }
@@ -124,6 +117,8 @@ public enum AuthMethod: String, Codable, CaseIterable {
         case .privatbank:
             return R.Strings.auth_accessibility_methods_bank.formattedLocalized(arguments: rawValue)
         case .photoId:
+            return R.Strings.auth_methods_photoID.formattedLocalized(arguments: rawValue)
+        case .smsOtp:
             return nil
         }
     }
@@ -135,4 +130,5 @@ public enum AuthTarget: String {
     case bankId = "bankid"
     case photoId = "photoid"
     case nfc
+    case smsOtp = "sms-otp"
 }

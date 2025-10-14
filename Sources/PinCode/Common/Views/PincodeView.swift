@@ -149,6 +149,10 @@ class PincodeView: UIView {
         indicatorsStack.layer.add(animation, forKey: "shake")
         
         UINotificationFeedbackGenerator().notificationOccurred(.error)
+        
+        onMainQueueAfter(time: Constants.voiceOverAnnouncementDelay) {
+            UIAccessibility.post(notification: .announcement, argument: R.Strings.general_accessibility_incorrect_password.localized())
+        }
     }
     
     func setComponentIds(indicatorsId: String, buttonsTile: String) {
@@ -179,6 +183,7 @@ extension PincodeView {
         static let indicatorBorderWidth: CGFloat = 2
         static let digitButtonBorderWidth: CGFloat = 2
         static let animationDuration: TimeInterval = 0.6
+        static let voiceOverAnnouncementDelay: TimeInterval = 0.1
         
         static var indicatorSize: CGFloat = 11
         static var indicatorsInteritemSpacing: CGFloat = 8
