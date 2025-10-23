@@ -1,5 +1,5 @@
-import UIKit
-import DiiaNetwork
+
+import Foundation
 
 struct AppConstants {
 

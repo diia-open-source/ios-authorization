@@ -24,7 +24,7 @@ public class UserAuthorizationManager: DisposeBagProvider, BindingExecutionConte
     private let userAuthorizationErrorRouter: RouterExtendedProtocol
     private let analyticsHandler: AnalyticsAuthorizationHandler
 
-    private (set) var token: String? {
+    private(set) var token: String? {
         didSet {
             storage.saveAuthToken(token)
         }

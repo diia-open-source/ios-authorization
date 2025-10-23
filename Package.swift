@@ -7,7 +7,7 @@ let package = Package(
     name: "DiiaAuthorization",
     defaultLocalization: "uk",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v15)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.

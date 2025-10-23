@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/diia-open-source/ios-commonservices.git",
       "state" : {
-        "revision" : "a6a0efefd3e9eabd2f4f12769b19cd712386bc7e",
-        "version" : "1.0.12"
+        "revision" : "c52ec6717366c0e38d364844a0d3b73626f97b25",
+        "version" : "1.0.13"
       }
     },
     {
@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/diia-open-source/ios-network.git",
       "state" : {
-        "revision" : "b38b4f31489bd409b5929d4f30a05c21710a1bbd",
-        "version" : "1.0.11"
+        "revision" : "0f40566919b406e1ac26c43216068bf636e2da00",
+        "version" : "1.0.12"
       }
     },
     {
@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/diia-open-source/ios-uicomponents.git",
       "state" : {
-        "revision" : "fa1056e7e28952f90a0d6edf0abeeeffdaf83022",
-        "version" : "1.0.17"
+        "revision" : "3e9d05b244ebe7a4d38cdf96940bbb2012ca1284",
+        "version" : "1.0.18"
       }
     },
     {
@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher",
       "state" : {
-        "revision" : "d06df9adf50ed8cde5786d935836a5f445f780ba",
-        "version" : "6.3.1"
+        "revision" : "2ef543ee21d63734e1c004ad6c870255e8716c50",
+        "version" : "7.12.0"
       }
     },
     {

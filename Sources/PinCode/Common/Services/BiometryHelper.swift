@@ -28,18 +28,14 @@ public class BiometryHelper {
     public static func biometricType() -> BiometricType {
         let authContext = LAContext()
         
-        if #available(iOS 11, *) {
-            if !authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
-                return .none
-            }
-            switch(authContext.biometryType) {
-            case .none: return .none
-            case .touchID: return .touch
-            case .faceID: return .face
-            default: return .none
-            }
-        } else {
-            return authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) ? .touch : .none
+        if !authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
+            return .none
+        }
+        switch(authContext.biometryType) {
+        case .none: return .none
+        case .touchID: return .touch
+        case .faceID: return .face
+        default: return .none
         }
     }
     
