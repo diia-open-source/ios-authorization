@@ -1,3 +1,4 @@
+
 import UIKit
 import DiiaUIComponents
 import DiiaCommonTypes
@@ -7,7 +8,7 @@ protocol PinCodeViewDelegate: NSObjectProtocol {
     func clearPressed()
 }
 
-class PincodeView: UIView {
+final class PincodeView: UIView {
 
     // MARK: - Outlets
     
@@ -61,7 +62,7 @@ class PincodeView: UIView {
                 indicator.widthAnchor.constraint(equalToConstant: Constants.indicatorSize).isActive = true
                 indicator.heightAnchor.constraint(equalToConstant: Constants.indicatorSize).isActive = true
                 indicator.layer.cornerRadius = Constants.indicatorSize / 2
-                indicator.backgroundColor = Constants.mainColor
+                indicator.backgroundColor = .white
                 self.indicators.append(indicator)
                 
                 return indicator
@@ -89,7 +90,7 @@ class PincodeView: UIView {
             $0.titleLabel?.font = FontBook.pincodeDigitFont
             $0.setTitleColor(.black, for: .normal)
             $0.setTitleColor(.white, for: .highlighted)
-            $0.setBackgroundColor(Constants.mainColor, for: .normal)
+            $0.setBackgroundColor(.white, for: .normal)
             $0.setBackgroundColor(.black, for: .highlighted)
             $0.addTarget(self, action: #selector(numberPressed), for: .touchUpInside)
             $0.accessibilityIdentifier = Constants.accessibilityId(for: $0.tag)
@@ -137,7 +138,7 @@ class PincodeView: UIView {
         indicators
             .enumerated()
             .forEach { (index, indicator) in
-                indicator.backgroundColor = count > index ? .black : Constants.mainColor
+                indicator.backgroundColor = count > index ? .black : .white
             }
     }
     
@@ -178,7 +179,6 @@ class PincodeView: UIView {
 // MARK: - Constants
 extension PincodeView {
     private enum Constants {
-        static let mainColor = UIColor("#EEF7F1")
         static let defaultIndicatorsAmount = 4
         static let indicatorBorderWidth: CGFloat = 2
         static let digitButtonBorderWidth: CGFloat = 2

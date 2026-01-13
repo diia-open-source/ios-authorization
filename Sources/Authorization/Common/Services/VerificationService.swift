@@ -1,3 +1,4 @@
+
 import Foundation
 import ReactiveKit
 import DiiaMVPModule
@@ -17,7 +18,7 @@ public struct UserIdentificationInput {
     }
 }
 
-public class VerificationService {
+public final class VerificationService {
     // MARK: - Properties
     private let authorizationService: (AuthorizationServiceProtocol&UserAuthFlowHandlerProtocol)
     private var authApiClient: AuthorizationApiClientProtocol
@@ -67,7 +68,7 @@ extension VerificationService {
         authApiClient
             .verificationAuthMethods(flow: flow, processId: self.authorizationService.getProcessId(), selectedMethod: nil)
             .observe { [weak self, weak view] signal in
-                guard let self = self, let view = view else { return }
+                guard let self, let view else { return }
                 switch signal {
                 case .next(let response):
                     self.authorizationService.setProcessId(processId: response.processId)
@@ -82,8 +83,7 @@ extension VerificationService {
                     GeneralErrorsHandler.process(
                         error: .init(networkError: error),
                         with: { [weak self, weak view] in
-                            guard let self = self, let view = view else { return }
-                            
+                            guard let self, let view else { return }
                             self.fetchAndShowAuthMethods(for: flow, in: view, completionHandler: completionHandler)
                         },
                         in: view,

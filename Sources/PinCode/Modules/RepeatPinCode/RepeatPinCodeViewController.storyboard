@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,40 +20,54 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCl-wR-KET">
-                                <rect key="frame" x="14" y="64" width="44" height="44"/>
+                                <rect key="frame" x="14" y="112" width="44" height="44"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="MnM-3L-sNy"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Yk0-mE-IhU"/>
                                     <constraint firstAttribute="height" constant="44" id="bcU-cM-90o"/>
                                     <constraint firstAttribute="width" constant="44" id="q3M-qr-Sez"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="menu_back"/>
                                 <connections>
-                                    <action selector="backButtonTapped" destination="SkL-vy-l63" eventType="touchUpInside" id="ZIQ-AM-ViQ"/>
+                                    <action selector="backButtonTapped" destination="SkL-vy-l63" eventType="touchUpInside" id="3pp-9b-YMf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Повторіть код з 4 цифр" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="5vs-oi-1bM">
-                                <rect key="frame" x="24" y="114" width="366" height="27.5"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kge-dW-8CH">
+                                <rect key="frame" x="56" y="122" width="302" height="24"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Активація Дія.Підпису">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Повторіть код з 6 цифр" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="5vs-oi-1bM">
+                                <rect key="frame" x="24" y="172" width="366" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abt-1t-ruC">
-                                <rect key="frame" x="24" y="165.5" width="366" height="18"/>
+                                <rect key="frame" x="24" y="215.5" width="366" height="36"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Впевніться, що не помилилися і пам'ятаєте код для входу.">
+                                    <fragment content="Переконайтеся, що не помилилися і пам'ятаєте код, який щойно створили">
                                         <attributes>
                                             <font key="NSFont" metaFont="cellTitle"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mca-e2-eYp">
-                                <rect key="frame" x="0.0" y="191.5" width="414" height="696.5"/>
+                                <rect key="frame" x="0.0" y="259.5" width="414" height="628.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ym-Ma-ZmT" customClass="PincodeView" customModule="DiiaAuthorizationPinCode">
-                                        <rect key="frame" x="0.0" y="108.5" width="414" height="480"/>
+                                        <rect key="frame" x="0.0" y="74.5" width="414" height="480"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="480" id="FXt-Xw-3XE"/>
@@ -67,22 +81,35 @@
                                     <constraint firstAttribute="trailing" secondItem="1Ym-Ma-ZmT" secondAttribute="trailing" id="zbD-wj-iKf"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2M-vh-VMa" userLabel="Cancel button">
+                                <rect key="frame" x="153" y="777" width="108" height="35"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Скасувати"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped" destination="SkL-vy-l63" eventType="touchUpInside" id="N8g-U6-QZk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2X8-ic-6rH"/>
                         <color key="backgroundColor" red="0.72549019609999998" green="0.73333333329999995" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Mca-e2-eYp" secondAttribute="bottom" constant="8" id="14U-ke-yKE"/>
-                            <constraint firstItem="5vs-oi-1bM" firstAttribute="top" secondItem="jCl-wR-KET" secondAttribute="bottom" constant="6" id="CTF-Xo-Eoi"/>
+                            <constraint firstItem="jCl-wR-KET" firstAttribute="top" secondItem="2X8-ic-6rH" secondAttribute="top" constant="16" id="2ch-rG-vek"/>
                             <constraint firstItem="Abt-1t-ruC" firstAttribute="leading" secondItem="2X8-ic-6rH" secondAttribute="leading" constant="24" id="J6n-3U-VNx"/>
+                            <constraint firstItem="jCl-wR-KET" firstAttribute="leading" secondItem="2X8-ic-6rH" secondAttribute="leading" constant="14" id="JFJ-1X-a4d"/>
                             <constraint firstAttribute="bottom" secondItem="Xdd-1w-DKG" secondAttribute="bottom" id="KWK-3X-V7S"/>
-                            <constraint firstItem="jCl-wR-KET" firstAttribute="top" secondItem="2X8-ic-6rH" secondAttribute="top" constant="16" id="Mtw-XQ-8AU"/>
                             <constraint firstItem="2X8-ic-6rH" firstAttribute="trailing" secondItem="5vs-oi-1bM" secondAttribute="trailing" constant="24" id="NFu-oj-y9Q"/>
-                            <constraint firstItem="5vs-oi-1bM" firstAttribute="top" secondItem="2X8-ic-6rH" secondAttribute="top" priority="750" constant="32" id="cVu-N0-l5u"/>
-                            <constraint firstItem="jCl-wR-KET" firstAttribute="leading" secondItem="2X8-ic-6rH" secondAttribute="leading" constant="14" id="cjS-W1-S9I"/>
+                            <constraint firstItem="Kge-dW-8CH" firstAttribute="top" secondItem="2X8-ic-6rH" secondAttribute="top" constant="26" id="ZgV-xW-P1Y"/>
+                            <constraint firstItem="5vs-oi-1bM" firstAttribute="top" secondItem="2X8-ic-6rH" secondAttribute="top" priority="750" constant="76" id="cVu-N0-l5u"/>
+                            <constraint firstItem="2X8-ic-6rH" firstAttribute="trailing" secondItem="Kge-dW-8CH" secondAttribute="trailing" constant="56" id="hal-o1-wnt"/>
+                            <constraint firstItem="2X8-ic-6rH" firstAttribute="bottom" secondItem="e2M-vh-VMa" secondAttribute="bottom" constant="16" id="jQa-4T-Q1b"/>
                             <constraint firstAttribute="trailing" secondItem="Mca-e2-eYp" secondAttribute="trailing" id="ln0-Fa-hcz"/>
-                            <constraint firstItem="Abt-1t-ruC" firstAttribute="top" secondItem="5vs-oi-1bM" secondAttribute="bottom" constant="24" id="lrT-cZ-ryp"/>
+                            <constraint firstItem="Abt-1t-ruC" firstAttribute="top" secondItem="5vs-oi-1bM" secondAttribute="bottom" constant="16" id="lrT-cZ-ryp"/>
                             <constraint firstItem="Mca-e2-eYp" firstAttribute="top" secondItem="Abt-1t-ruC" secondAttribute="bottom" constant="8" id="n1c-te-RoM"/>
+                            <constraint firstItem="Kge-dW-8CH" firstAttribute="leading" secondItem="2X8-ic-6rH" secondAttribute="leading" constant="56" id="ntK-Op-Avz"/>
                             <constraint firstItem="5vs-oi-1bM" firstAttribute="leading" secondItem="2X8-ic-6rH" secondAttribute="leading" constant="24" id="rmj-mk-rbh"/>
+                            <constraint firstItem="e2M-vh-VMa" firstAttribute="centerX" secondItem="AEi-QI-pby" secondAttribute="centerX" id="tna-7N-RXu"/>
                             <constraint firstItem="Xdd-1w-DKG" firstAttribute="trailing" secondItem="2X8-ic-6rH" secondAttribute="trailing" id="vJx-kJ-2L5"/>
                             <constraint firstItem="Xdd-1w-DKG" firstAttribute="leading" secondItem="2X8-ic-6rH" secondAttribute="leading" id="xbl-G9-8j5"/>
                             <constraint firstItem="2X8-ic-6rH" firstAttribute="trailing" secondItem="Abt-1t-ruC" secondAttribute="trailing" constant="24" id="yOa-7r-2vJ"/>
@@ -91,11 +118,14 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="jCl-wR-KET" id="Tgq-ag-zAT"/>
+                        <outlet property="backButton" destination="jCl-wR-KET" id="3R2-9u-otn"/>
+                        <outlet property="backgroundImageView" destination="Xdd-1w-DKG" id="rNd-Qi-Jug"/>
+                        <outlet property="cancelButton" destination="e2M-vh-VMa" id="wkX-Us-68Y"/>
                         <outlet property="headerLabel" destination="5vs-oi-1bM" id="cyG-cE-IPE"/>
                         <outlet property="infoLabel" destination="Abt-1t-ruC" id="Fz8-sq-W5U"/>
                         <outlet property="pincodeHeightConstraint" destination="FXt-Xw-3XE" id="GUs-JC-wml"/>
                         <outlet property="pincodeView" destination="1Ym-Ma-ZmT" id="hFj-ty-O38"/>
+                        <outlet property="titleLabel" destination="Kge-dW-8CH" id="N0b-tY-vrC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwf-OA-Pw5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

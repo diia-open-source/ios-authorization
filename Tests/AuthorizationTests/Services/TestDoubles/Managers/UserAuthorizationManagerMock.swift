@@ -1,10 +1,11 @@
+
 import Foundation
 import DiiaMVPModule
 import DiiaNetwork
 import DiiaCommonTypes
 @testable import DiiaAuthorization
 
-class UserAuthorizationManagerMock: UserAuthorizationManager {
+final class UserAuthorizationManagerMock: UserAuthorizationManager {
     private(set) var isLogoutCalled: Bool = false
     private(set) var isRefreshCalled: Bool = false
     private(set) var isGetTokenCalled: Bool = false

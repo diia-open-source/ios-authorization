@@ -1,9 +1,13 @@
+
 import UIKit
 import DiiaMVPModule
+import DiiaCommonServices
+import DiiaCommonTypes
 
 protocol RepeatPinCodeAction: BasePresenter {
     func selectNumber(number: Int)
     func removeLast()
+    func cancel()
 }
 
 final class RepeatPinCodePresenter: RepeatPinCodeAction {
@@ -48,8 +52,30 @@ final class RepeatPinCodePresenter: RepeatPinCodeAction {
         guard !pinCode.isEmpty else { return }
         pinCode.removeLast()
     }
-    
-    // MARK: - Private Methods
+
+    func cancel() {
+        handleTemplate(Constants.cancelTemplate)
+    }
+
+    // MARK: - Private
+    private func handleTemplate(_ alert: AlertTemplate) {
+        TemplateHandler.handleGlobal(alert) { [weak self] action in
+            switch action {
+            case .cancel:
+                if let viewController = self?.view as? UIViewController,
+                   let navigationController = viewController.navigationController,
+                   navigationController.viewControllers.count >= 3 {
+                    let targetViewController = navigationController.viewControllers[navigationController.viewControllers.count - 3]
+                    navigationController.popToViewController(targetViewController, animated: true)
+                } else {
+                    self?.view.closeModule(animated: true)
+                }
+            default:
+                break
+            }
+        }
+    }
+
     private func checkPincode() {
         if oldPinCode == pinCode {
             viewModel.completionHandler(pinCode, view)
@@ -65,3 +91,29 @@ final class RepeatPinCodePresenter: RepeatPinCodeAction {
         }
     }
 }
+
+extension RepeatPinCodePresenter {
+    private enum Constants {
+        static let templateIcon = "attentionBlackRound"
+        static let cancelTemplate = AlertTemplate(
+            type: .middleCenterIconBlackButtonAlert,
+            isClosable: false,
+            data: AlertTemplateData(
+                icon: Constants.templateIcon,
+                title: R.Strings.authorization_template_cancel_title.localized(),
+                description: R.Strings.authorization_template_cancel_description.localized(),
+                mainButton: AlertButtonModel(
+                    title: R.Strings.authorization_template_cancel_button_primary.localized(),
+                    icon: nil,
+                    action: .cancel
+                ),
+                alternativeButton: AlertButtonModel(
+                    title: R.Strings.authorization_template_cancel_button_secondary.localized(),
+                    icon: nil,
+                    action: .skip
+                )
+            )
+        )
+    }
+}
+

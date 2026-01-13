@@ -1,8 +1,9 @@
+
 import UIKit
 import DiiaUIComponents
 @testable import DiiaAuthorization
 
-class AuthMethodsActionSheetMockView: UIViewController, AuthMethodsActionSheetView {
+final class AuthMethodsActionSheetMockView: UIViewController, AuthMethodsActionSheetView {
     private(set) var isSetTitleCalled: Bool = false
     private(set) var isConfigureCalled: Bool = false
     private(set) var isSetSeparatorColorCalled: Bool = false

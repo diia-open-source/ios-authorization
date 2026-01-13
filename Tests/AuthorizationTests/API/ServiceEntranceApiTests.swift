@@ -1,7 +1,8 @@
+
 import XCTest
 @testable import DiiaAuthorization
 
-class ServiceEntranceApiTests: XCTestCase {
+final class ServiceEntranceApiTests: XCTestCase {
     
     override func tearDown() {
         ServiceEntranceAPI.headers = nil

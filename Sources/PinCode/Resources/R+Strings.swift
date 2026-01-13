@@ -1,3 +1,4 @@
+
 import Foundation
 
 internal extension R {
@@ -15,7 +16,9 @@ internal extension R {
         
         // MARK: - General
         case general_step
-        
+        case general_cancel
+        case general_cancel_hint
+
         // MARK: - Authorization
         case authorization_create_pincode
         case authorization_repeat_pincode
@@ -23,7 +26,12 @@ internal extension R {
         case authorization_allow_later
         case authorization_new_pin_details
         case authorization_repeat_pin_details
-        
+        case authorization_template_cancel_title
+        case authorization_template_cancel_description
+        case authorization_template_cancel_button_primary
+        case authorization_template_cancel_button_secondary
+
+
         // MARK: - Menu
         case menu_change_pin_new
         case menu_change_pin_olddescr

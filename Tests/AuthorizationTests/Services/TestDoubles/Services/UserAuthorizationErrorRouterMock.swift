@@ -1,8 +1,9 @@
+
 import Foundation
 import DiiaMVPModule
 import DiiaCommonTypes
 
-class UserAuthorizationErrorRouterMock: RouterExtendedProtocol {
+final class UserAuthorizationErrorRouterMock: RouterExtendedProtocol {
     private(set) var isRouteCalled: Bool = false
     private(set) var isRouteReplaceCalled: Bool = false
     

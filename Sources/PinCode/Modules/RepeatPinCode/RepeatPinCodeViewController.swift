@@ -1,3 +1,4 @@
+
 import UIKit
 import DiiaMVPModule
 import DiiaUIComponents
@@ -11,8 +12,11 @@ protocol RepeatPinCodeView: BaseView {
 final class RepeatPinCodeViewController: UIViewController, Storyboarded {
 
 	// MARK: - Outlets
+    @IBOutlet private weak var backgroundImageView: UIImageView!
     @IBOutlet private weak var pincodeView: PincodeView!
     @IBOutlet private weak var backButton: UIButton?
+    @IBOutlet private weak var cancelButton: UIButton!
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var headerLabel: UILabel!
     @IBOutlet private weak var infoLabel: UILabel!
     
@@ -39,9 +43,17 @@ final class RepeatPinCodeViewController: UIViewController, Storyboarded {
         headerLabel.text = R.Strings.authorization_repeat_pincode.formattedLocalized(arguments: Constants.pincodeLength)
         headerLabel.font = FontBook.largeFont
         infoLabel.font = FontBook.usualFont
+        titleLabel.font = FontBook.mainFont.regular.size(16)
         pincodeHeightConstraint.constant = Constants.pincodeHeight
         pincodeView.delegate = self
-
+        
+        cancelButton?.titleLabel?.font = FontBook.bigText
+        cancelButton.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { container in
+            var newContainer = container
+            newContainer.font = FontBook.bigText
+            return newContainer
+        }
+        
         setupAccessibility()
     }
 
@@ -52,6 +64,8 @@ final class RepeatPinCodeViewController: UIViewController, Storyboarded {
             indicatorsId: Constants.ellipsStepperComponentId,
             buttonsTile: Constants.btnNumComponentId)
 
+        cancelButton?.accessibilityLabel = R.Strings.general_cancel.localized()
+        cancelButton?.accessibilityHint = R.Strings.general_cancel_hint.localized()
         backButton?.accessibilityLabel = R.Strings.general_accessibility_back_button_label.localized()
         backButton?.accessibilityHint = R.Strings.general_accessibility_back_button_step.localized()
         headerLabel.accessibilityHint = R.Strings.auth_accessibility_pincode_header_hint.localized()
@@ -60,6 +74,10 @@ final class RepeatPinCodeViewController: UIViewController, Storyboarded {
     // MARK: - Actions
     @IBAction private func backButtonTapped() {
         closeModule(animated: true)
+    }
+
+    @IBAction private func cancelButtonTapped() {
+        presenter.cancel()
     }
 }
 
@@ -73,6 +91,10 @@ extension RepeatPinCodeViewController: RepeatPinCodeView {
         switch viewModel.authFlow {
         case .login, .prolong, .serviceLogin:
             backButton?.removeFromSuperview()
+            cancelButton.isHidden = true
+        case .diiaId:
+            titleLabel.isHidden = false
+            backgroundImageView.image = UIImage.from(color: Constants.backgroundColor)
         default:
             return
         }
@@ -101,6 +123,7 @@ extension RepeatPinCodeViewController: PinCodeViewDelegate {
 // MARK: - Constants
 extension RepeatPinCodeViewController {
     private enum Constants {
+        static let backgroundColor = UIColor("#E2ECF4")
         static var pincodeHeight: CGFloat {
             switch UIDevice.size() {
             case .screen4Inch, .screen_zoomed: return 372

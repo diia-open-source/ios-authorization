@@ -1,9 +1,10 @@
+
 import XCTest
 import DiiaMVPModule
 import DiiaCommonTypes
 @testable import DiiaAuthorization
 
-class AuthMethodsHandlerTests: XCTestCase {
+final class AuthMethodsHandlerTests: XCTestCase {
     
     private var authorizationService: AutorizationManagerMock!
     private var identificationInput: UserIdentificationInput?

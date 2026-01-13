@@ -1,3 +1,4 @@
+
 import Foundation
 import ReactiveKit
 import DiiaNetwork
@@ -9,7 +10,7 @@ protocol ServiceEntranceApiClientProtocol {
     func refresh(token: String) -> Signal<GetTokenResponse, NetworkError>
 }
 
-class ServiceEntranceApiClient: ApiClient<ServiceEntranceAPI>, ServiceEntranceApiClientProtocol {
+final class ServiceEntranceApiClient: ApiClient<ServiceEntranceAPI>, ServiceEntranceApiClientProtocol {
 
     init(context: AuthorizationNetworkContext) {
         super.init()

@@ -1,3 +1,4 @@
+
 import Foundation
 
 public enum DiiaIdResult<Success, Failure> where Failure: Error {

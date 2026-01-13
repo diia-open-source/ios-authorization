@@ -1,3 +1,4 @@
+
 import UIKit
 import DiiaMVPModule
 import DiiaUIComponents
@@ -9,11 +10,13 @@ protocol EnterPinCodeView: BaseView {
 	func setEnteredNumbersCount(count: Int)
     func userDidEnterIncorrectPin()
     func configureForBiometry(biometryType: BiometryHelper.BiometricType, action: @escaping Callback)
+    func setupBackground(_ background: ConstructorBackground)
 }
 
 final class EnterPinCodeViewController: UIViewController, Storyboarded, ChildSubcontroller {
 
     // MARK: - Outlets
+    @IBOutlet private weak var backgroundImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var pincodeView: PincodeView!
     @IBOutlet private weak var forgotButton: UIButton!
@@ -94,6 +97,15 @@ extension EnterPinCodeViewController: EnterPinCodeView {
             pincodeView.configureAdditionalButton(image: R.Image.fingerprint.image, action: action)
         default:
             break
+        }
+    }
+    
+    public func setupBackground(_ background: ConstructorBackground) {
+        switch background {
+        case .color(let color):
+            backgroundImageView.image = UIImage.from(color: color)
+        case .image(let image):
+            backgroundImageView.image = image
         }
     }
 }

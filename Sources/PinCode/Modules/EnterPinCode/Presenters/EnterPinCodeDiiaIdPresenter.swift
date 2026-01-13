@@ -1,4 +1,6 @@
+
 import Foundation
+import UIKit
 
 final class EnterPinCodeDiiaIdPresenter: EnterPinCodeAction {
     
@@ -31,6 +33,7 @@ final class EnterPinCodeDiiaIdPresenter: EnterPinCodeAction {
     // MARK: - Public Methods
     func configureView() {
         view.configure(with: viewModel)
+        view.setupBackground(.color(Constants.backgroundColor))
     }
     
     func viewDidAppear() { }
@@ -66,5 +69,6 @@ final class EnterPinCodeDiiaIdPresenter: EnterPinCodeAction {
 extension EnterPinCodeDiiaIdPresenter {
     private enum Constants {
         static let allowedAttempts = 3
+        static let backgroundColor = UIColor("#E2ECF4")
     }
 }

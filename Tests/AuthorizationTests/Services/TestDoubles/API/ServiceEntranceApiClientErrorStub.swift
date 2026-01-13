@@ -1,10 +1,11 @@
+
 import Foundation
 import ReactiveKit
 import DiiaNetwork
 import DiiaCommonTypes
 @testable import DiiaAuthorization
 
-class ServiceEntranceApiClientErrorStub: ServiceEntranceApiClientProtocol {
+final class ServiceEntranceApiClientErrorStub: ServiceEntranceApiClientProtocol {
     func login(offerId: String) -> Signal<GetTokenResponse, NetworkError> {
         return .failed(.noData)
     }

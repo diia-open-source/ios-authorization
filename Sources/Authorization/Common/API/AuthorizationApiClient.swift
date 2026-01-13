@@ -1,3 +1,4 @@
+
 import Foundation
 import ReactiveKit
 import DiiaNetwork
@@ -21,7 +22,7 @@ public protocol AuthorizationApiClientProtocol {
     func getAuthMethods() -> Signal<AuthMethodsResponse, NetworkError>
 }
 
-public class AuthorizationApiClient: ApiClient<AuthorizationAPI>, AuthorizationApiClientProtocol {
+public final class AuthorizationApiClient: ApiClient<AuthorizationAPI>, AuthorizationApiClientProtocol {
 
     private let token: () -> String
 

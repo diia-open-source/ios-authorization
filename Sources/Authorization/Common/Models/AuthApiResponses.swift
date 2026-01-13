@@ -1,3 +1,4 @@
+
 import UIKit
 import DiiaCommonTypes
 
@@ -28,7 +29,7 @@ public struct RefreshTokenResponse: Decodable {
 public struct VerificationAuthMethodsResponse: Decodable {
     public let title: String?
     public let processId: String?
-    public let disabledMethods: [VerificationDisabledAuthMethods]
+    public let disabledMethods: [VerificationDisabledAuthMethods]?
     public let authMethods: [AuthMethod]?
     public let button: AlertButtonModel?
     public let skipAuthMethods: Bool?

@@ -1,3 +1,4 @@
+
 import UIKit
 import DiiaMVPModule
 import DiiaUIComponents
@@ -5,7 +6,7 @@ import DiiaCommonServices
 import DiiaAuthorization
 @testable import DiiaAuthorizationMethods
 
-class SelectBankMockView: UIViewController, SelectBankView {
+final class SelectBankMockView: UIViewController, SelectBankView {
     private(set) var isBankIdAuthModuleCalled: Bool = false
     private(set) var isShowProgressCalled = false
     private(set) var isHideProgressCalled = false

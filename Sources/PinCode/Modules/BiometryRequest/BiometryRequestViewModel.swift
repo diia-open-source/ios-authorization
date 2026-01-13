@@ -1,9 +1,10 @@
+
 import UIKit
 import DiiaMVPModule
 import DiiaAuthorization
 import DiiaCommonTypes
 
-public class BiometryRequestViewModel {
+public final class BiometryRequestViewModel {
     
     // MARK: - Properties
     let title: String

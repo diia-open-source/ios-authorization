@@ -1,7 +1,8 @@
+
 import UIKit
 import DiiaMVPModule
 
-class BaseModuleStub: BaseModule {
+final class BaseModuleStub: BaseModule {
     func viewController() -> UIViewController {
         return UIViewController()
     }

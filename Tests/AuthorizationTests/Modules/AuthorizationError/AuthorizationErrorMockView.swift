@@ -1,8 +1,9 @@
+
 import UIKit
 import DiiaCommonTypes
 @testable import DiiaAuthorization
 
-class AuthorizationErrorMockView: UIViewController, AuthorizationErrorView {
+final class AuthorizationErrorMockView: UIViewController, AuthorizationErrorView {
     private(set) var isSetMessageCalled: Bool = false
     private(set) var isSetMainActionTitleCalled: Bool = false
     private(set) var isSetAlternativeActionTitleCalled: Bool = false

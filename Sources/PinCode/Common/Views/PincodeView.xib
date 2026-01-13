@@ -168,6 +168,7 @@
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="gha-lB-Rsw" secondAttribute="height" multiplier="1:1" id="6u3-LM-kkI"/>
                                     </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" image="clear"/>
                                     <connections>
                                         <action selector="clearPressed:" destination="-1" eventType="touchUpInside" id="pIW-fN-VvP"/>

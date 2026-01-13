@@ -66,6 +66,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="ByH-Fq-4vp" id="EXX-L3-48t"/>
                         <outlet property="forgotBottomConstraint" destination="6GY-Q4-BEr" id="L69-DV-Tje"/>
                         <outlet property="forgotButton" destination="mlT-nc-vfb" id="7r1-AT-w9a"/>
                         <outlet property="pincodeBottomConstraint" destination="rZQ-hI-vUO" id="sEi-td-Uo4"/>

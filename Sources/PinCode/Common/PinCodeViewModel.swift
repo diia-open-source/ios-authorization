@@ -1,9 +1,10 @@
+
 import Foundation
 import DiiaMVPModule
 import DiiaAuthorization
 import DiiaCommonTypes
 
-public class PinCodeViewModel {
+public final class PinCodeViewModel {
     let pinCodeLength: Int
     let createDetails: String
     let repeatDetails: String

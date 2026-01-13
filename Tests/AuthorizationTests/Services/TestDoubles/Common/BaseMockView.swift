@@ -1,10 +1,11 @@
+
 import UIKit
 import DiiaMVPModule
 import DiiaUIComponents
 import DiiaCommonServices
 @testable import DiiaAuthorization
 
-class BaseMockView: UIViewController, BaseView {
+final class BaseMockView: UIViewController, BaseView {
     private(set) var isAuthMethodsActionSheetModuleCalled = false
     private(set) var isCloseToViewViewAnimatedCalled = false
     private(set) var isBaseModuleStubCalled = false

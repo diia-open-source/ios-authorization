@@ -1,3 +1,4 @@
+
 import UIKit
 import DiiaCommonTypes
 import DiiaCommonServices
@@ -7,7 +8,7 @@ public protocol IdentifyTaskPerformer {
     func identify(with input: UserIdentificationInput)
 }
 
-class AuthMethodsHandler {
+final class AuthMethodsHandler {
     private let data: AuthActivityViewData
     private let authFlow: AuthFlow
     private let authorizationService: (AuthorizationServiceProtocol&UserAuthFlowHandlerProtocol)

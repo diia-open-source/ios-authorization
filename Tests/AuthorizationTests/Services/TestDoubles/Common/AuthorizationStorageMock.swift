@@ -1,7 +1,8 @@
+
 import Foundation
 @testable import DiiaAuthorization
 
-class AuthorizationStorageMock: AuthorizationStorageProtocol {
+final class AuthorizationStorageMock: AuthorizationStorageProtocol {
     private(set) var isRemoveAllDataCalled: Bool = false
     private(set) var isRemoveLogoutTokenCalled: Bool = false
     private(set) var isRemoveServiceLogoutTokenCalled: Bool = false

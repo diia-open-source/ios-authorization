@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/diia-open-source/ios-commonservices.git",
       "state" : {
-        "revision" : "c52ec6717366c0e38d364844a0d3b73626f97b25",
-        "version" : "1.0.13"
+        "revision" : "bc7d34c25c3ce8a6596568438cf36b695d53714e",
+        "version" : "1.0.14"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/diia-open-source/ios-commontypes.git",
       "state" : {
-        "revision" : "d9a0b9fb32ec4725d865530a568d562983163118",
-        "version" : "1.0.20"
+        "revision" : "5c39a33bd2d8453b1a4dbaefa8d85bcdd85d8fde",
+        "version" : "1.0.21"
       }
     },
     {
@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/diia-open-source/ios-mvpmodule.git",
       "state" : {
-        "revision" : "1bb81cb1db77295939ef0e915a27962380d95396",
-        "version" : "1.0.15"
+        "revision" : "5d9ed70ec64b8557e0b85329628da81fe1df7081",
+        "version" : "1.0.16"
       }
     },
     {
@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/diia-open-source/ios-network.git",
       "state" : {
-        "revision" : "0f40566919b406e1ac26c43216068bf636e2da00",
-        "version" : "1.0.12"
+        "revision" : "e64e05aac4eda9e40331bc94110545ea585de39c",
+        "version" : "1.0.13"
       }
     },
     {
@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/diia-open-source/ios-uicomponents.git",
       "state" : {
-        "revision" : "3e9d05b244ebe7a4d38cdf96940bbb2012ca1284",
-        "version" : "1.0.18"
+        "revision" : "82a0c9f9f264d43ee77e522f3eb97fda6dd806ed",
+        "version" : "1.0.19"
       }
     },
     {
@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-spm.git",
       "state" : {
-        "revision" : "60ea4f82fba8b4cb21a75665a889e86ed4d81c6e",
-        "version" : "4.2.0"
+        "revision" : "69faaefa7721fba9e434a52c16adf4329c9084db",
+        "version" : "4.6.0"
       }
     },
     {

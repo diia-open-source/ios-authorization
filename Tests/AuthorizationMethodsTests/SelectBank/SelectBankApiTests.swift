@@ -1,7 +1,8 @@
+
 import XCTest
 @testable import DiiaAuthorizationMethods
 
-class SelectBankApiTests: XCTestCase {
+final class SelectBankApiTests: XCTestCase {
     
     override func tearDown() {
         SelectBankAPI.host = ""

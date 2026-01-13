@@ -1,3 +1,4 @@
+
 import Foundation
 import ReactiveKit
 import DiiaNetwork
@@ -8,7 +9,7 @@ protocol SelectBankApiClientProtocol {
     func getAuthUrl(bankId: String, processId: String) -> Signal<TemplatedResponse<BankIDAuthUrlModel>, NetworkError>
 }
 
-class SelectBankAPIClient: ApiClient<SelectBankAPI>, SelectBankApiClientProtocol {
+final class SelectBankAPIClient: ApiClient<SelectBankAPI>, SelectBankApiClientProtocol {
     
     private let token: () -> String
     

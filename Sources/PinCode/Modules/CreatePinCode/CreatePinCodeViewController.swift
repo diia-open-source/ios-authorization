@@ -1,3 +1,4 @@
+
 import UIKit
 import DiiaMVPModule
 import DiiaUIComponents
@@ -10,8 +11,10 @@ protocol CreatePinCodeView: BaseView {
 final class CreatePinCodeViewController: UIViewController, Storyboarded {
     
     // MARK: - Outlets
+    @IBOutlet private weak var backgroundImageView: UIImageView!
     @IBOutlet private weak var pincodeView: PincodeView!
-    @IBOutlet private weak var backButton: UIButton?
+    @IBOutlet private weak var cancelButton: UIButton?
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var headerLabel: UILabel!
     @IBOutlet private weak var infoLabel: UILabel!
     
@@ -40,8 +43,17 @@ final class CreatePinCodeViewController: UIViewController, Storyboarded {
     
     // MARK: - Private Methods
     private func initialSetup() {
+        titleLabel.font = FontBook.mainFont.regular.size(16)
         headerLabel.font = FontBook.largeFont
         infoLabel.font = FontBook.usualFont
+        cancelButton?.titleLabel?.font = FontBook.bigText
+        
+        cancelButton?.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { container in
+            var newContainer = container
+            newContainer.font = FontBook.bigText
+            return newContainer
+        }
+        
         pincodeView.delegate = self
         pincodeHeightConstraint.constant = Constants.pincodeHeight
         
@@ -55,14 +67,14 @@ final class CreatePinCodeViewController: UIViewController, Storyboarded {
             indicatorsId: Constants.ellipsStepperComponentId,
             buttonsTile: Constants.btnNumComponentId)
 
-        backButton?.accessibilityLabel = R.Strings.general_accessibility_back_button_label.localized()
-        backButton?.accessibilityHint = R.Strings.general_accessibility_back_button_step.localized()
+        cancelButton?.accessibilityLabel = R.Strings.general_cancel.localized()
+        cancelButton?.accessibilityHint = R.Strings.general_cancel_hint.localized()
         headerLabel.accessibilityHint =  R.Strings.auth_accessibility_pincode_header_hint.localized()
     }
     
     // MARK: - Actions
-    @IBAction private func backButtonTapped() {
-        closeModule(animated: true)
+    @IBAction private func cancelButtonTapped() {
+        presenter.cancel()
     }
 }
 
@@ -75,7 +87,10 @@ extension CreatePinCodeViewController: CreatePinCodeView {
         
         switch viewModel.authFlow {
         case .login, .prolong, .serviceLogin:
-            backButton?.removeFromSuperview()
+            cancelButton?.removeFromSuperview()
+        case .diiaId:
+            titleLabel.isHidden = false
+            backgroundImageView.image = UIImage.from(color: Constants.backgroundColor)
         default:
             return
         }
@@ -100,6 +115,7 @@ extension CreatePinCodeViewController: PinCodeViewDelegate {
 // MARK: - Constants
 extension CreatePinCodeViewController {
     private enum Constants {
+        static let backgroundColor = UIColor("#E2ECF4")
         static var pincodeHeight: CGFloat {
             switch UIDevice.size() {
             case .screen4Inch, .screen_zoomed: return 372

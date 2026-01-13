@@ -1,10 +1,11 @@
+
 import Foundation
 import ReactiveKit
 import DiiaNetwork
 import DiiaCommonTypes
 @testable import DiiaAuthorization
 
-class AuthorizationApiClientErrorStub: AuthorizationApiClientProtocol {
+final class AuthorizationApiClientErrorStub: AuthorizationApiClientProtocol {
     func getAuthUrl(target: AuthTarget) -> Signal<AuthUrlResponse, NetworkError> {
         return .failed(.noData)
     }

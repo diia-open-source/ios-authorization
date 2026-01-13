@@ -1,7 +1,8 @@
+
 import Foundation
 import DiiaAuthorization
 
-class VerificationFlowMock: VerificationFlowProtocol {
+final class VerificationFlowMock: VerificationFlowProtocol {
     let flowCode: String
     let authFlow: AuthFlow
     let isAuthorization: Bool

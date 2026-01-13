@@ -1,8 +1,9 @@
+
 import XCTest
 import DiiaUIComponents
 @testable import DiiaAuthorization
 
-class VerificationServiceTests: XCTestCase {
+final class VerificationServiceTests: XCTestCase {
 
     private var authorizationService: AutorizationManagerMock!
     private var authorizationApiClient: AuthorizationApiClientStub!

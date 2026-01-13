@@ -12,6 +12,8 @@
 
 // MARK: - General
 "general_step" = "Крок %@ з %@";
+"general_cancel" = "Скасувати";
+"general_cancel_hint" = "Натисніть щоб скасувати";
 
 // MARK: - Authorization
 "authorization_create_pincode" = "Придумайте\nкод з %@ цифр";
@@ -23,6 +25,10 @@
 
 "authorization_new_pin_details" = "Цей код ви будете вводити для входу у застосунок Дія.";
 "authorization_repeat_pin_details" = "Переконайтеся, що не помилилися і пам'ятаєте код для входу.";
+"authorization_template_cancel_title" = "Скасувати процес?";
+"authorization_template_cancel_description" = "Ви впевнені, що хочете скасувати процес підтвердження особи?";
+"authorization_template_cancel_button_primary" = "Так, скасувати";
+"authorization_template_cancel_button_secondary" = "Ні, продовжити";
 
 // MARK: - Menu
 "menu_change_pin_new" = "Новий код з %@ цифр";

@@ -1,8 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "nfc.svg",
-      "idiom" : "universal"
+      "filename" : "nfc_icon_squared.svg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

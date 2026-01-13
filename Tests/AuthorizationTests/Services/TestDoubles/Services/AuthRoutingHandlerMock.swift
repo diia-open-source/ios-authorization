@@ -1,9 +1,10 @@
+
 import UIKit
 import DiiaMVPModule
 import DiiaCommonTypes
 import DiiaCommonServices
 
-class AuthRoutingHandlerMock: RoutingHandlerProtocol {
+final class AuthRoutingHandlerMock: RoutingHandlerProtocol {
     
     var action: ((BaseView?) -> Void)?
     
@@ -19,7 +20,7 @@ class AuthRoutingHandlerMock: RoutingHandlerProtocol {
 }
 
 // MARK: - Stubs
-class DeepLinkManagerStub: DeepLinkManagerProtocol {
+final class DeepLinkManagerStub: DeepLinkManagerProtocol {
     var appRouter: RoutingHandlerProtocol? = AuthRoutingHandlerMock()
     
     func parse(url: URL) -> Bool {
@@ -27,7 +28,7 @@ class DeepLinkManagerStub: DeepLinkManagerProtocol {
     }
 }
 
-class URLOpenerStub: URLOpenerProtocol {
+final class URLOpenerStub: URLOpenerProtocol {
     func url(urlString: String?, linkType: String?) -> Bool {
         return false
     }

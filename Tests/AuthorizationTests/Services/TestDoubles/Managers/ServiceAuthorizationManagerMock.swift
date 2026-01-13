@@ -1,8 +1,9 @@
+
 import Foundation
 import DiiaMVPModule
 @testable import DiiaAuthorization
 
-class ServiceAuthorizationManagerMock: ServiceAuthorizationManager {
+final class ServiceAuthorizationManagerMock: ServiceAuthorizationManager {
     private(set) var isLogoutCalled: Bool = false
     private(set) var isServiceLoginCalled: Bool = false
     private(set) var isRefreshCalled: Bool = false

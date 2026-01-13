@@ -1,3 +1,4 @@
+
 import Foundation
 import LocalAuthentication
 
@@ -17,7 +18,7 @@ struct BiometrySupportImpl: BiometrySupportProtocol {
     }
 }
 
-public class BiometryHelper {
+public final class BiometryHelper {
 
     public enum BiometricType {
         case none

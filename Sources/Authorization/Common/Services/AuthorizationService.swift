@@ -1,3 +1,4 @@
+
 import UIKit
 import ReactiveKit
 import DiiaMVPModule
@@ -44,7 +45,7 @@ public protocol AuthorizationServiceStateHandler {
 }
 
 // MARK: - AuthorizationService
-public class AuthorizationService: AuthorizationServiceProtocol {
+public final class AuthorizationService: AuthorizationServiceProtocol {
 
     // MARK: - Properties
     private let context: AuthorizationContext
