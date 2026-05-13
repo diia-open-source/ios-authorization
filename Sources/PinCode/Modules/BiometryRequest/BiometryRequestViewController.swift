@@ -28,13 +28,13 @@ final class BiometryRequestViewController: UIViewController, Storyboarded {
     }
     
     private func initialSetup() {
-        titleLabel.font = FontBook.numbersHeadingFont
-        descriptionLabel.font = FontBook.usualFont
+        titleLabel.font = Constants.headerTextFont
+        descriptionLabel.font = Constants.defaultTextFont
         
         approveButton.titleLabel?.font = FontBook.bigText
         approveButton.setTitle(R.Strings.authorization_allow.localized(), for: .normal)
         
-        laterButton.titleLabel?.font = FontBook.usualFont
+        laterButton.titleLabel?.font = Constants.defaultTextFont
         laterButton.setTitle(R.Strings.authorization_allow_later.localized(), for: .normal)
 
         setupAccessibility()
@@ -76,6 +76,8 @@ extension BiometryRequestViewController: BiometryRequestView {
 // MARK: - Constants
 extension BiometryRequestViewController {
     private enum Constants {
+        static let defaultTextFont = FontBook.mainFont.regular.size(14)
+        static let headerTextFont = FontBook.mainFont.regular.size(21)
         static let descriptionLineHeightMultiple: CGFloat = 1.25
     }
 }

@@ -27,8 +27,8 @@ final class ChangePincodeViewController: UIViewController, Storyboarded {
 	override func viewDidLoad() {
         super.viewDidLoad()
         
-        headerLabel.font = FontBook.detailsTitleFont
-        infoLabel.font = FontBook.usualFont
+        headerLabel.font = Constants.headerTextFont
+        infoLabel.font = Constants.defaultTextFont
         pincodeHeightConstraint.constant = Constants.pincodeHeight
         pincodeView.delegate = self
         presenter.configureView()
@@ -83,6 +83,8 @@ extension ChangePincodeViewController: PinCodeViewDelegate {
 // MARK: - Constants
 extension ChangePincodeViewController {
     private enum Constants {
+        static let defaultTextFont = FontBook.mainFont.regular.size(14)
+        static let headerTextFont = FontBook.mainFont.regular.size(21)
         static var pincodeHeight: CGFloat {
             switch UIDevice.size() {
             case .screen4Inch, .screen_zoomed: return 372

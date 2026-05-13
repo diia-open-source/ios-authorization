@@ -43,16 +43,10 @@ final class CreatePinCodeViewController: UIViewController, Storyboarded {
     
     // MARK: - Private Methods
     private func initialSetup() {
-        titleLabel.font = FontBook.mainFont.regular.size(16)
-        headerLabel.font = FontBook.largeFont
-        infoLabel.font = FontBook.usualFont
-        cancelButton?.titleLabel?.font = FontBook.bigText
-        
-        cancelButton?.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { container in
-            var newContainer = container
-            newContainer.font = FontBook.bigText
-            return newContainer
-        }
+        titleLabel.font = Constants.titleTextFont
+        headerLabel.font = Constants.headerTextFont
+        infoLabel.font = Constants.defaultTextFont
+        cancelButton?.titleLabel?.font = Constants.defaultTextFont
         
         pincodeView.delegate = self
         pincodeHeightConstraint.constant = Constants.pincodeHeight
@@ -115,6 +109,10 @@ extension CreatePinCodeViewController: PinCodeViewDelegate {
 // MARK: - Constants
 extension CreatePinCodeViewController {
     private enum Constants {
+        static let defaultTextFont = FontBook.mainFont.regular.size(14)
+        static let titleTextFont = FontBook.mainFont.regular.size(16)
+        static let headerTextFont = FontBook.mainFont.regular.size(21)
+        
         static let backgroundColor = UIColor("#E2ECF4")
         static var pincodeHeight: CGFloat {
             switch UIDevice.size() {

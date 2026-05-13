@@ -41,19 +41,13 @@ final class RepeatPinCodeViewController: UIViewController, Storyboarded {
     // MARK: - Private Methods
     private func initialSetup() {
         headerLabel.text = R.Strings.authorization_repeat_pincode.formattedLocalized(arguments: Constants.pincodeLength)
-        headerLabel.font = FontBook.largeFont
-        infoLabel.font = FontBook.usualFont
-        titleLabel.font = FontBook.mainFont.regular.size(16)
+        headerLabel.font = Constants.headerTextFont
+        infoLabel.font = Constants.defaultTextFont
+        titleLabel.font = Constants.titleTextFont
         pincodeHeightConstraint.constant = Constants.pincodeHeight
         pincodeView.delegate = self
         
-        cancelButton?.titleLabel?.font = FontBook.bigText
-        cancelButton.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { container in
-            var newContainer = container
-            newContainer.font = FontBook.bigText
-            return newContainer
-        }
-        
+        cancelButton?.titleLabel?.font = Constants.defaultTextFont
         setupAccessibility()
     }
 
@@ -123,6 +117,9 @@ extension RepeatPinCodeViewController: PinCodeViewDelegate {
 // MARK: - Constants
 extension RepeatPinCodeViewController {
     private enum Constants {
+        static let defaultTextFont = FontBook.mainFont.regular.size(14)
+        static let headerTextFont = FontBook.mainFont.regular.size(21)
+        static let titleTextFont = FontBook.mainFont.regular.size(16)
         static let backgroundColor = UIColor("#E2ECF4")
         static var pincodeHeight: CGFloat {
             switch UIDevice.size() {

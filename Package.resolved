@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/diia-open-source/ios-commonservices.git",
       "state" : {
-        "revision" : "bc7d34c25c3ce8a6596568438cf36b695d53714e",
-        "version" : "1.0.14"
+        "revision" : "9f1ede552fb8c25db28210971130203da46b4ad1",
+        "version" : "1.0.15"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/diia-open-source/ios-commontypes.git",
       "state" : {
-        "revision" : "5c39a33bd2d8453b1a4dbaefa8d85bcdd85d8fde",
-        "version" : "1.0.21"
+        "revision" : "70d8dcee3475ae525f95842d9a671485741264b5",
+        "version" : "1.0.22"
       }
     },
     {
@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/diia-open-source/ios-uicomponents.git",
       "state" : {
-        "revision" : "82a0c9f9f264d43ee77e522f3eb97fda6dd806ed",
-        "version" : "1.0.19"
+        "revision" : "a33b70ce5de2cca431143e6b331006e07f5055ac",
+        "version" : "1.0.25"
       }
     },
     {

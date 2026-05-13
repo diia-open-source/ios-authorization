@@ -1,7 +1,7 @@
 // MARK: - Emoji
 
 // MARK: - Accessibility
-"auth_accessibility_pincode_clear_button_label" = "Видалити";
+"auth_accessibility_pincode_clear_button_label" = "Видалити останню введену цифру";
 "general_accessibility_back_button_label" = "Назад";
 "general_accessibility_back_button_hint" = "Натисніть двічі, щоб повернутися на попередній крок.";
 "general_accessibility_back_button_step" = "Натисніть двічі, щоб повернутися на попередній крок.";

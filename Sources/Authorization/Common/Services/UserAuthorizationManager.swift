@@ -62,11 +62,13 @@ public class UserAuthorizationManager: DisposeBagProvider, BindingExecutionConte
         if ReachabilityHelper.shared.isReachable() {
             logout(for: logoutToken)
         } else {
-            ReachabilityHelper.shared.statusSignal
-                .filter { $0 }
-                .first()
-                .observeNext { [weak self] _ in self?.logout(for: logoutToken) }
-                .dispose(in: bag)
+            ReachabilityHelper.shared
+                .statusSignal
+                .observe(observer: self, triggerNow: false) { [weak self] isReachable in
+                    guard let self, isReachable else { return }
+                    ReachabilityHelper.shared.statusSignal.removeObserver(observer: self)
+                    self.logout(for: logoutToken)
+                }
         }
     }
 
@@ -109,11 +111,13 @@ public class UserAuthorizationManager: DisposeBagProvider, BindingExecutionConte
         if ReachabilityHelper.shared.isReachable() {
             logout(for: logoutToken)
         } else {
-            ReachabilityHelper.shared.statusSignal
-                .filter { $0 }
-                .first()
-                .observeNext { [weak self] _ in self?.logout(for: logoutToken) }
-                .dispose(in: bag)
+            ReachabilityHelper.shared
+                .statusSignal
+                .observe(observer: self, triggerNow: false) { [weak self] isReachable in
+                    guard let self, isReachable else { return }
+                    ReachabilityHelper.shared.statusSignal.removeObserver(observer: self)
+                    self.logout(for: logoutToken)
+                }
         }
     }
     

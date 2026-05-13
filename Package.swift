@@ -50,8 +50,8 @@ let package = Package(
             dependencies: [
                 .product(name: "DiiaMVPModule", package: "ios-mvpmodule"),
                 .product(name: "DiiaNetwork", package: "ios-network"),
-                .product(name: "DiiaUIComponents", package: "ios-uicomponents"),
                 .product(name: "DiiaCommonTypes", package: "ios-commontypes"),
+                .product(name: "DiiaUIComponents", package: "ios-uicomponents"),
                 .product(name: "DiiaCommonServices", package: "ios-commonservices"),
                 "DiiaAuthorization",
             ],
@@ -62,8 +62,8 @@ let package = Package(
             dependencies: [
                 .product(name: "DiiaMVPModule", package: "ios-mvpmodule"),
                 .product(name: "DiiaNetwork", package: "ios-network"),
-                .product(name: "DiiaUIComponents", package: "ios-uicomponents"),
                 .product(name: "DiiaCommonTypes", package: "ios-commontypes"),
+                .product(name: "DiiaUIComponents", package: "ios-uicomponents"),
                 "DiiaAuthorization",
             ],
             path: "Sources/PinCode"

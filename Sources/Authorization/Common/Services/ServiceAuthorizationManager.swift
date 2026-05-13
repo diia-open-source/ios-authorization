@@ -87,11 +87,13 @@ class ServiceAuthorizationManager {
         if ReachabilityHelper.shared.isReachable() {
             logout(for: logoutToken)
         } else {
-            ReachabilityHelper.shared.statusSignal
-                .filter { $0 }
-                .first()
-                .observeNext { _ in self.logout(for: logoutToken) }
-                .dispose(in: disposeBag)
+            ReachabilityHelper.shared
+                .statusSignal
+                .observe(observer: self, triggerNow: false) { [weak self] isReachable in
+                    guard let self, isReachable else { return }
+                    ReachabilityHelper.shared.statusSignal.removeObserver(observer: self)
+                    self.logout(for: logoutToken)
+                }
         }
     }
     

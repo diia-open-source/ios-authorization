@@ -36,12 +36,13 @@ final class EnterPinCodeViewController: UIViewController, Storyboarded, ChildSub
         presenter.configureView()
         pincodeView.delegate = self
         
-        titleLabel.font = FontBook.detailsTitleFont
+        titleLabel.font = Constants.headerTextFont
+        
         pincodeHeightConstraint.constant = Constants.pincodeHeight
         pincodeBottomConstraint.constant = Constants.pincodeBottomOffset
         forgotBottomConstraint.constant = Constants.forgetBottomOffset
         
-        forgotButton.titleLabel?.font = FontBook.usualFont
+        forgotButton.titleLabel?.font = Constants.defaultTextFont
     }
     
     private func setupAccessibility() {
@@ -123,6 +124,9 @@ extension EnterPinCodeViewController: PinCodeViewDelegate {
 
 extension EnterPinCodeViewController {
     private enum Constants {
+        static let defaultTextFont = FontBook.mainFont.regular.size(14)
+        static let headerTextFont = FontBook.mainFont.regular.size(21)
+        
         static var pincodeHeight: CGFloat {
             switch UIDevice.size() {
             case .screen4Inch, .screen_zoomed: return 372
